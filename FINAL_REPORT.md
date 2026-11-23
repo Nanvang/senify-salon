@@ -1,4 +1,4 @@
-# Senify Salon — Comprehensive Project & Assignment Report
+ # Senify Salon — Comprehensive Project & Assignment Report
 
 > **Project:** Senify Salon Website (Hair & Beauty Salon in Lagos, Nigeria)  
 > **Location:** `D:\senify-salon`  

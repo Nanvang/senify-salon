@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Senify Salon – Hair &amp; Beauty in Lagos, Nigeria. Braiding, weaving, wig installation, beauty products and more." />
+    content="Senify Salon – Premium Hair &amp; Beauty in Lagos, Nigeria. Braiding, weaving, wig installation, beauty products and expert care." />
   <title>Senify Salon | Hair &amp; Beauty Lagos</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
@@ -15,27 +15,36 @@
 
   <!-- =============================================
        HEADER & NAVIGATION
-       Fixed top bar — stays visible as you scroll.
-       Each nav link uses an href that jumps to a
-       section with a matching id further down the page.
+       Fixed top bar with the official Senify Salon logo,
+       standard horizontal menu on desktop, and an
+       accessible hamburger dropdown menu on mobile.
   ============================================= -->
   <header class="site-header">
     <div class="header-inner">
 
-      <!-- Logo mark -->
-      <div class="logo">
-        <span class="logo-icon">✦</span>
+      <!-- Official Clickable Logo returning visitors to Home -->
+      <a href="#home" class="logo" aria-label="Senify Salon - Back to home">
+        <img src="Images/senify-logo.png" alt="Senify Salon Logo" class="logo-img" />
         <span class="logo-text">Senify <em>Salon</em></span>
-      </div>
+      </a>
 
-      <!-- Main navigation -->
-      <nav aria-label="Main navigation">
+      <!-- Mobile Hamburger Toggle Button -->
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="primaryNav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Main Navigation Menu -->
+      <nav id="primaryNav" class="nav-menu" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#why-choose-us">Why Choose Us</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact" class="nav-cta">Contact Us</a></li>
         </ul>
@@ -48,15 +57,13 @@
   <!-- =============================================
        MAIN CONTENT
        All page sections live inside <main>.
-       Screen readers use this landmark to skip
-       straight to the main content.
   ============================================= -->
   <main>
 
     <!-- ============================================================
          SECTION 1 — HOME / HERO
-         Full-screen banner with a background photograph.
-         The dark overlay on top makes the white text easy to read.
+         Full-screen banner with hero photo, contrast overlay,
+         call-to-actions, and direct WhatsApp booking.
     ============================================================ -->
     <section id="home" class="section hero-section">
 
@@ -65,7 +72,7 @@
         alt="A beautifully styled woman with a lace-front wig, representing the quality and elegance of Senify Salon"
         class="hero-bg-img" />
 
-      <!-- Semi-transparent dark overlay so text is readable over the photo -->
+      <!-- Semi-transparent dark overlay for text readability -->
       <div class="hero-overlay"></div>
 
       <!-- Hero text and call-to-action buttons -->
@@ -84,50 +91,94 @@
 
 
     <!-- ============================================================
-         SECTION 2 — ABOUT
-         Two-column layout: salon photograph on the left,
-         descriptive text on the right.
+         SECTION 2 — ABOUT US (Including Meet the Founder)
+         Two-part section: salon story followed by founder profile.
     ============================================================ -->
     <section id="about" class="section about-section">
-      <div class="container two-col">
+      <div class="container">
 
-        <!-- Left column: salon photograph -->
-        <div class="about-image-wrap">
-          <div class="about-img-frame">
-            <img src="Images/salon.jpg"
-              alt="The welcoming interior of Senify Salon, showing styling chairs, mirrors and a clean, elegant environment"
-              class="about-img" />
+        <!-- Part 1: Salon Overview -->
+        <div class="two-col about-overview">
+          <!-- Left column: salon photograph -->
+          <div class="about-image-wrap">
+            <div class="about-img-frame">
+              <img src="Images/salon.jpg"
+                alt="The welcoming interior of Senify Salon, showing styling chairs, mirrors and a clean, elegant environment"
+                class="about-img" />
+            </div>
+            <div class="about-badge">Est. in Lagos</div>
           </div>
-          <!-- Small decorative badge overlapping the bottom-right corner of the photo -->
-          <div class="about-badge">Est. in Lagos</div>
+
+          <!-- Right column: about text -->
+          <div class="about-text">
+            <p class="section-label">Who We Are</p>
+            <h2>Crafted for the Modern Nigerian Woman</h2>
+            <p>
+              Senify Salon is a full-service hair and beauty destination built on the belief that every woman deserves
+              to
+              feel confident and beautiful. Our team of skilled beauty professionals is passionate about their craft
+              and dedicated to delivering outstanding results.
+            </p>
+            <p>
+              From protective styles to luxury wig installations, premium skincare, and professional makeup, we bring
+              together the finest products and services under one roof — tailored to celebrate your natural beauty.
+            </p>
+            <ul class="about-highlights">
+              <li>✦ Certified founder &amp; skilled styling team</li>
+              <li>✦ Quality-tested products only</li>
+              <li>✦ Hygienic, welcoming environment</li>
+              <li>✦ Personalised beauty consultations</li>
+            </ul>
+
+            <p class="photo-note">
+              📷 <em>Photographs are illustrative and will be replaced with genuine Senify Salon images when
+                available.</em>
+            </p>
+          </div>
+        </div><!-- end about-overview -->
+
+        <!-- Elegant divider before the Founder profile -->
+        <div class="founder-subheading-wrap">
+          <div class="gold-divider"></div>
         </div>
 
-        <!-- Right column: about text -->
-        <div class="about-text">
-          <p class="section-label">Who We Are</p>
-          <h2>Crafted for the Modern Nigerian Woman</h2>
-          <p>
-            Senify Salon is a full-service hair and beauty destination built on the belief that every woman deserves to
-            feel confident and beautiful. Our team of skilled stylists and beauty professionals are passionate about
-            their craft and dedicated to delivering outstanding results.
-          </p>
-          <p>
-            From protective styles to luxury wig installations, premium skincare, and professional makeup, we bring
-            together the finest products and services under one roof — tailored to celebrate your natural beauty.
-          </p>
-          <ul class="about-highlights">
-            <li>✦ Skilled, certified stylists</li>
-            <li>✦ Quality-tested products only</li>
-            <li>✦ Hygienic, welcoming environment</li>
-            <li>✦ Personalised beauty consultations</li>
-          </ul>
+        <!-- Part 2: Meet the Founder Subsection -->
+        <div class="two-col founder-section">
+          <!-- Founder portrait -->
+          <div class="founder-image-wrap">
+            <div class="founder-img-frame">
+              <img src="Images/senify-founder.png" alt="Certified Founder and Creative Director of Senify Salon"
+                class="founder-img" />
+            </div>
+            <div class="founder-badge">Certified Beauty Specialist</div>
+          </div>
 
-          <!-- Photograph disclaimer — required because images are illustrative -->
-          <p class="photo-note">
-            📷 <em>Photographs are illustrative and will be replaced with genuine Senify Salon images when
-              available.</em>
-          </p>
-        </div>
+          <!-- Founder details and philosophy -->
+          <div class="founder-text">
+            <p class="section-label">Leadership &amp; Passion</p>
+            <h3>Meet the Woman Behind Senify Salon</h3>
+            <p class="founder-subtitle">Founder &amp; Creative Director</p>
+            <p>
+              At the heart of Senify Salon is our certified founder, whose vision was born from a deep passion for
+              artistry, hair health, and female empowerment. With professional certification in beauty care and
+              advanced hair styling, she established Senify Salon to bring world-class beauty standards right here to
+              Lagos.
+            </p>
+            <p>
+              Every appointment reflects her commitment to individualized attention, hygienic practices, and client
+              satisfaction. Whether crafting precision braids, fitting luxury lace wigs, or recommending skincare
+              essentials, her philosophy remains constant: beauty should enhance your natural confidence and celebrate
+              your individuality.
+            </p>
+            <div class="founder-quote">
+              <blockquote>
+                &ldquo;Beauty isn&rsquo;t about conformity; it&rsquo;s about feeling completely confident in your own
+                skin
+                and hair.&rdquo;
+              </blockquote>
+            </div>
+          </div>
+        </div><!-- end founder-section -->
 
       </div>
     </section>
@@ -135,9 +186,7 @@
 
     <!-- ============================================================
          SECTION 3 — HAIR STYLING SERVICES
-         Three service cards in a responsive grid.
-         Each card lists the service, what is included,
-         and a demonstration price (not a real price).
+         Cards for Braiding, Weaving, and Wig Installation.
     ============================================================ -->
     <section id="services" class="section services-section">
       <div class="container">
@@ -222,8 +271,7 @@
 
     <!-- ============================================================
          SECTION 4 — BEAUTY PRODUCTS
-         Product cards with photographs, descriptions and
-         demonstration prices. Covers seven product categories.
+         Curated beauty collections with photographs and descriptions.
     ============================================================ -->
     <section id="products" class="section products-section">
       <div class="container">
@@ -234,7 +282,7 @@
           skin tones and hair types.
         </p>
 
-        <!-- Products grid — uses a tighter minmax so more cards fit per row -->
+        <!-- Products grid -->
         <div class="cards-grid products-grid">
 
           <!-- Wigs -->
@@ -279,7 +327,7 @@
             </div>
           </article>
 
-          <!-- Beauty creams — no dedicated photo; reuse skincare image -->
+          <!-- Beauty creams & skincare -->
           <article class="card product-card">
             <div class="product-img-wrap">
               <img src="Images/skincare.jpg"
@@ -337,11 +385,7 @@
 
     <!-- ============================================================
          SECTION 5 — STYLE GALLERY
-         A masonry-style grid of eight photographs.
-         Two "featured" items span two rows so the grid
-         looks varied and interesting.
-         All photos use object-fit: cover so they fill
-         their frame without stretching.
+         Masonry-style editorial grid featuring real hairstyles & products.
     ============================================================ -->
     <section id="gallery" class="section gallery-section">
       <div class="container">
@@ -355,10 +399,10 @@
             photographs once available.</em>
         </p>
 
-        <!-- Gallery grid — IMPORTANT: every figure must be INSIDE this div -->
+        <!-- Gallery grid -->
         <div class="gallery-grid">
 
-          <!-- Item 1: Braids (normal height) -->
+          <!-- Item 1: Braids -->
           <figure class="gallery-item">
             <div class="gallery-img">
               <img src="Images/braids.jpg" alt="A client with long, neat knotless box braids in natural black hair"
@@ -367,7 +411,7 @@
             <figcaption>Knotless Box Braids</figcaption>
           </figure>
 
-          <!-- Item 2: Hairstyle — FEATURED (spans two rows) -->
+          <!-- Item 2: Hairstyle — FEATURED -->
           <figure class="gallery-item gallery-featured">
             <div class="gallery-img">
               <img src="Images/hairstyle.jpg"
@@ -377,7 +421,7 @@
             <figcaption>Glamour Hairstyle</figcaption>
           </figure>
 
-          <!-- Item 3: Weaving (normal height) -->
+          <!-- Item 3: Weaving -->
           <figure class="gallery-item">
             <div class="gallery-img">
               <img src="Images/weaving.jpg" alt="A stylist carefully applying a sew-in weave on a client's natural hair"
@@ -386,7 +430,7 @@
             <figcaption>Sew-in Weave</figcaption>
           </figure>
 
-          <!-- Item 4: Skincare products (normal height) -->
+          <!-- Item 4: Skincare products -->
           <figure class="gallery-item">
             <div class="gallery-img">
               <img src="Images/skincare.jpg"
@@ -395,7 +439,7 @@
             <figcaption>Skincare Collection</figcaption>
           </figure>
 
-          <!-- Item 5: Makeup look (normal height) -->
+          <!-- Item 5: Makeup look -->
           <figure class="gallery-item">
             <div class="gallery-img">
               <img src="Images/makeup.jpg"
@@ -405,7 +449,7 @@
             <figcaption>Glam Makeup Look</figcaption>
           </figure>
 
-          <!-- Item 6: Nails — FEATURED (spans two rows) -->
+          <!-- Item 6: Nails — FEATURED -->
           <figure class="gallery-item gallery-featured">
             <div class="gallery-img">
               <img src="Images/nails.jpg"
@@ -415,7 +459,7 @@
             <figcaption>Gel Nail Set</figcaption>
           </figure>
 
-          <!-- Item 7: Hair extensions (normal height) -->
+          <!-- Item 7: Hair extensions -->
           <figure class="gallery-item">
             <div class="gallery-img">
               <img src="Images/extensions.jpg"
@@ -424,7 +468,7 @@
             <figcaption>Hair Extensions</figcaption>
           </figure>
 
-          <!-- Item 8: Wig install (normal height) -->
+          <!-- Item 8: Wig install -->
           <figure class="gallery-item">
             <div class="gallery-img">
               <img src="Images/wig-install.jpg"
@@ -433,18 +477,75 @@
             <figcaption>Wig Installation</figcaption>
           </figure>
 
-        </div><!-- end gallery-grid — all figures must be inside here -->
+        </div><!-- end gallery-grid -->
 
       </div>
     </section>
 
 
     <!-- ============================================================
-         SECTION 6 — FREQUENTLY ASKED QUESTIONS
-         Uses the HTML <details> and <summary> elements.
-         These act like accordion panels without any JavaScript —
-         clicking a question expands or collapses the answer.
-         This section fulfils the "extra section" requirement.
+         SECTION 6 — WHY CHOOSE US
+         Four cards highlighting Senify Salon's core strengths:
+         certified expertise, personal attention, complete services,
+         and curated beauty products.
+    ============================================================ -->
+    <section id="why-choose-us" class="section why-us-section">
+      <div class="container">
+        <p class="section-label">Our Strengths</p>
+        <h2>Why Choose Senify Salon?</h2>
+        <p class="section-intro">
+          We are committed to delivering an elevated salon experience through professional expertise, attentive care,
+          and a welcoming studio atmosphere.
+        </p>
+
+        <div class="why-us-grid">
+          <!-- Card 1: Certified Beauty Expertise -->
+          <article class="why-card">
+            <div class="why-icon" aria-hidden="true">🎓</div>
+            <h3>Certified Beauty Expertise</h3>
+            <p>
+              Guided by our certified founder, we practice proven, hair-friendly techniques that prioritize hair
+              health, neatness, and long-lasting beauty.
+            </p>
+          </article>
+
+          <!-- Card 2: Personal Attention -->
+          <article class="why-card">
+            <div class="why-icon" aria-hidden="true">🤍</div>
+            <h3>Personal Attention</h3>
+            <p>
+              Every client is unique. We take time to listen, assess your hair texture, and tailor every style or
+              installation to suit your personal preferences.
+            </p>
+          </article>
+
+          <!-- Card 3: Hair and Beauty Services -->
+          <article class="why-card">
+            <div class="why-icon" aria-hidden="true">✨</div>
+            <h3>Hair &amp; Beauty Services</h3>
+            <p>
+              From protective knotless braiding and seamless sew-in weaving to precision wig installs, our services
+              cover all your beauty needs in one place.
+            </p>
+          </article>
+
+          <!-- Card 4: Beauty Products and Accessories -->
+          <article class="why-card">
+            <div class="why-icon" aria-hidden="true">🛍️</div>
+            <h3>Beauty Products &amp; Accessories</h3>
+            <p>
+              We stock quality-tested virgin hair extensions, human hair wigs, skincare lotions, makeup, and nail
+              products curated for exceptional results.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 7 — FREQUENTLY ASKED QUESTIONS
+         Native HTML <details>/<summary> accordion (zero JavaScript).
     ============================================================ -->
     <section id="faq" class="section faq-section">
       <div class="container faq-container">
@@ -520,19 +621,17 @@
 
 
     <!-- ============================================================
-         SECTION 7 — CONTACT
-         Two-column layout: info cards on the left,
-         enquiry form on the right.
-         The form is static (HTML only) and does not
-         send data without a backend service.
+         SECTION 8 — CONTACT US
+         Direct WhatsApp booking, confirmed business email,
+         location info, and an honest disabled static form.
     ============================================================ -->
     <section id="contact" class="section contact-section">
       <div class="container contact-container">
         <p class="section-label">Get in Touch</p>
         <h2>Contact Us</h2>
         <p class="section-intro">
-          Interested in booking a service or finding out more about our products? We'd love to hear from you.
-          Once the contact form is connected, you will be able to send enquiries directly from this page.
+          Interested in booking a service or finding out more about our products? We'd love to hear from you. Chat with
+          us directly on WhatsApp or send an email.
         </p>
 
         <div class="contact-wrap two-col">
@@ -540,28 +639,7 @@
           <!-- Left: contact information cards -->
           <div class="contact-info">
 
-            <div class="info-card">
-              <span class="info-icon" aria-hidden="true">📍</span>
-              <div>
-                <h4>Location</h4>
-                <!-- No real address: exact details to be confirmed by business owner -->
-                <p>Lagos, Nigeria<br>
-                  <em class="contact-pending">Contact details pending — to be confirmed by the business owner.</em>
-                </p>
-              </div>
-            </div>
-
-            <div class="info-card">
-              <span class="info-icon" aria-hidden="true">🕐</span>
-              <div>
-                <h4>Opening Hours</h4>
-                <!-- Hours are illustrative; to be confirmed by business owner -->
-                <p>
-                  <em class="contact-pending">Opening hours to be confirmed by the business owner.</em>
-                </p>
-              </div>
-            </div>
-
+            <!-- Card 1: WhatsApp Booking (Primary) -->
             <div class="info-card info-card-whatsapp">
               <span class="info-icon" aria-hidden="true">💬</span>
               <div>
@@ -582,10 +660,43 @@
               </div>
             </div>
 
+            <!-- Card 2: Official Email -->
+            <div class="info-card">
+              <span class="info-icon" aria-hidden="true">✉️</span>
+              <div>
+                <h4>Email Enquiries</h4>
+                <p>
+                  <a href="mailto:senansamuel14@gmail.com" class="contact-email-link">senansamuel14@gmail.com</a>
+                </p>
+                <p class="contact-card-sub">For appointments, product enquiries &amp; customer support.</p>
+              </div>
+            </div>
+
+            <!-- Card 3: Location -->
+            <div class="info-card">
+              <span class="info-icon" aria-hidden="true">📍</span>
+              <div>
+                <h4>Location</h4>
+                <p>Lagos, Nigeria<br>
+                  <em class="contact-pending">Exact address provided upon confirmed booking.</em>
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4: Opening Hours -->
+            <div class="info-card">
+              <span class="info-icon" aria-hidden="true">🕐</span>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>
+                  <em class="contact-pending">Opening hours to be confirmed by the business owner.</em>
+                </p>
+              </div>
+            </div>
+
           </div><!-- end contact-info -->
 
           <!-- Right: enquiry form -->
-          <!-- action="#" means the form reloads the page on submit — harmless for a static site -->
           <form class="contact-form" action="#" method="post" novalidate>
 
             <div class="form-group">
@@ -623,19 +734,24 @@
               <p class="form-status-heading">⚠️ Form not yet connected</p>
               <p class="form-status-body">
                 This web form does not currently send messages. For immediate booking or product enquiries, please chat
-                with us directly on WhatsApp:
+                with us directly on WhatsApp or send an email:
               </p>
-              <a href="https://wa.me/2349030658580?text=Hello%20Senify%20Salon%2C%20I%20would%20like%20to%20enquire%20about%20your%20beauty%20services."
-                class="btn btn-whatsapp btn-whatsapp-inline" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"
-                  class="whatsapp-icon">
-                  <path fill="#25D366"
-                    d="M12.004 2C6.478 2 2 6.478 2 12c0 1.954.563 3.778 1.536 5.32L2.25 21.75l4.577-1.258A9.957 9.957 0 0 0 12.004 22c5.524 0 10.002-4.478 10.002-10S17.528 2 12.004 2z" />
-                  <path fill="#FFFFFF"
-                    d="M17.731 16.178c-.24.673-1.392 1.286-1.92 1.344-.504.057-1.156.082-3.32-.813-2.617-1.082-4.305-3.743-4.436-3.916-.13-.173-1.054-1.403-1.054-2.677 0-1.273.666-1.899.903-2.158.236-.26.516-.324.688-.324.172 0 .344.002.495.01.16.008.375-.061.587.447.22.528.75 1.83.816 1.962.065.132.108.288.021.46-.086.173-.13.28-.258.432-.13.152-.272.339-.388.455-.13.13-.265.27-.114.53.151.26.67 1.103 1.436 1.785.986.877 1.817 1.149 2.076 1.278.258.13.41.109.56-.065.152-.173.647-.755.82-1.015.172-.26.344-.216.58-.13.237.087 1.506.71 1.764.84.258.13.43.195.495.303.064.108.064.627-.176 1.3z" />
-                </svg>
-                Chat on WhatsApp
-              </a>
+              <div class="form-status-actions">
+                <a href="https://wa.me/2349030658580?text=Hello%20Senify%20Salon%2C%20I%20would%20like%20to%20enquire%20about%20your%20beauty%20services."
+                  class="btn btn-whatsapp btn-whatsapp-inline" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"
+                    class="whatsapp-icon">
+                    <path fill="#25D366"
+                      d="M12.004 2C6.478 2 2 6.478 2 12c0 1.954.563 3.778 1.536 5.32L2.25 21.75l4.577-1.258A9.957 9.957 0 0 0 12.004 22c5.524 0 10.002-4.478 10.002-10S17.528 2 12.004 2z" />
+                    <path fill="#FFFFFF"
+                      d="M17.731 16.178c-.24.673-1.392 1.286-1.92 1.344-.504.057-1.156.082-3.32-.813-2.617-1.082-4.305-3.743-4.436-3.916-.13-.173-1.054-1.403-1.054-2.677 0-1.273.666-1.899.903-2.158.236-.26.516-.324.688-.324.172 0 .344.002.495.01.16.008.375-.061.587.447.22.528.75 1.83.816 1.962.065.132.108.288.021.46-.086.173-.13.28-.258.432-.13.152-.272.339-.388.455-.13.13-.265.27-.114.53.151.26.67 1.103 1.436 1.785.986.877 1.817 1.149 2.076 1.278.258.13.41.109.56-.065.152-.173.647-.755.82-1.015.172-.26.344-.216.58-.13.237.087 1.506.71 1.764.84.258.13.43.195.495.303.064.108.064.627-.176 1.3z" />
+                  </svg>
+                  Chat on WhatsApp
+                </a>
+                <a href="mailto:senansamuel14@gmail.com" class="btn btn-outline-dark">
+                  ✉️ Email Us
+                </a>
+              </div>
               <p class="form-status-note">
                 To connect this form for automated web submissions later, services such as
                 <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a> or
@@ -656,20 +772,22 @@
 
   <!-- =============================================
        FOOTER
-       Bottom of every page. Contains the logo,
-       quick navigation links and a legal notice.
+       Bottom of every page with official logo,
+       complete navigation links, WhatsApp & Email links.
   ============================================= -->
   <footer class="site-footer">
     <div class="footer-inner">
 
-      <!-- Brand name -->
+      <!-- Official Logo in Footer -->
       <div class="footer-brand">
-        <span class="logo-icon">✦</span>
+        <a href="#home" class="footer-logo-link" aria-label="Senify Salon - Back to home">
+          <img src="Images/senify-logo.png" alt="Senify Salon Logo" class="footer-logo-img" />
+        </a>
         <span class="logo-text">Senify <em>Salon</em></span>
         <p class="footer-tagline">Hair &amp; Beauty · Lagos, Nigeria</p>
       </div>
 
-      <!-- Footer navigation — mirrors the main nav -->
+      <!-- Footer navigation matching all sections -->
       <nav aria-label="Footer navigation">
         <ul class="footer-nav">
           <li><a href="#home">Home</a></li>
@@ -677,18 +795,22 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#why-choose-us">Why Choose Us</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- Small WhatsApp contact link -->
-      <p class="footer-whatsapp">
+      <!-- Contact links: WhatsApp & Email -->
+      <div class="footer-contact-links">
         <a href="https://wa.me/2349030658580?text=Hello%20Senify%20Salon%2C%20I%20would%20like%20to%20enquire%20about%20your%20beauty%20services."
-          class="footer-whatsapp-link" target="_blank" rel="noopener noreferrer">
+          class="footer-contact-pill" target="_blank" rel="noopener noreferrer">
           <span class="whatsapp-dot" aria-hidden="true"></span> WhatsApp: +234 903 065 8580
         </a>
-      </p>
+        <a href="mailto:senansamuel14@gmail.com" class="footer-contact-pill">
+          <span aria-hidden="true">✉️</span> senansamuel14@gmail.com
+        </a>
+      </div>
 
       <!-- Legal disclaimer -->
       <p class="footer-legal">
@@ -699,6 +821,59 @@
 
     </div>
   </footer>
+
+  <!-- =============================================
+       MOBILE NAVIGATION JAVASCRIPT
+       Lightweight, accessible vanilla script to toggle
+       the mobile hamburger dropdown menu and close it
+       when clicking links, clicking outside, or pressing Escape.
+  ============================================= -->
+  <script>
+    (function () {
+      const navToggle = document.getElementById('navToggle');
+      const primaryNav = document.getElementById('primaryNav');
+
+      if (!navToggle || !primaryNav) return;
+
+      function toggleNav() {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navToggle.classList.toggle('is-active', !isExpanded);
+        primaryNav.classList.toggle('is-active', !isExpanded);
+      }
+
+      function closeNav() {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.classList.remove('is-active');
+        primaryNav.classList.remove('is-active');
+      }
+
+      navToggle.addEventListener('click', toggleNav);
+
+      // Close menu when a navigation link is clicked
+      const navLinks = primaryNav.querySelectorAll('a');
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', closeNav);
+      });
+
+      // Close menu with Escape key for keyboard accessibility
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && primaryNav.classList.contains('is-active')) {
+          closeNav();
+          navToggle.focus();
+        }
+      });
+
+      // Close menu when clicking outside of it
+      document.addEventListener('click', function (e) {
+        if (primaryNav.classList.contains('is-active') &&
+          !primaryNav.contains(e.target) &&
+          !navToggle.contains(e.target)) {
+          closeNav();
+        }
+      });
+    })();
+  </script>
 
 </body>
 

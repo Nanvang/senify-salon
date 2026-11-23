@@ -3,13 +3,16 @@
    A beginner-friendly, well-commented stylesheet.
 
    COLOUR PALETTE
-   --cream:        #FAF6F1  — warm white page background
-   --blush:        #E8A598  — soft pink accent colour
-   --blush-light:  #F5DDD8  — very pale pink for backgrounds
-   --blush-deep:   #C97B6A  — deeper pink for hover states
-   --brown-dark:   #3B2214  — almost-black brown for headings
-   --brown-mid:    #6B3D2E  — medium brown for body text
-   --brown-light:  #9E6B5A  — lighter brown for captions / labels
+   --cream:        #FAF6F1  — warm cream page background
+   --blush:        #E8A598  — soft blush pink accent
+   --blush-light:  #F5DDD8  — pale blush for subtle backgrounds
+   --blush-deep:   #C97B6A  — deeper blush for hover states
+   --brown-dark:   #3B2214  — deep chocolate brown for headings & branding
+   --brown-mid:    #6B3D2E  — warm medium brown for body text
+   --brown-light:  #9E6B5A  — lighter brown for captions & labels
+   --gold:         #C9A15D  — soft gold accent (from official logo)
+   --gold-light:   #F7EFE2  — light gold tint for card backgrounds & quotes
+   --gold-deep:    #A8813B  — rich gold for active borders & badges
    --white:        #FFFFFF  — pure white
 
    HOW TO READ THIS FILE
@@ -23,7 +26,6 @@
    1. CSS CUSTOM PROPERTIES (variables)
       Define colours, sizes and transitions once
       here, then reuse them throughout the file.
-      Change a value here and it updates everywhere.
 ============================================= */
 :root {
   --cream:        #FAF6F1;
@@ -33,6 +35,9 @@
   --brown-dark:   #3B2214;
   --brown-mid:    #6B3D2E;
   --brown-light:  #9E6B5A;
+  --gold:         #C9A15D;
+  --gold-light:   #F7EFE2;
+  --gold-deep:    #A8813B;
   --white:        #FFFFFF;
 
   /* Box-shadow shorthand used on cards and panels */
@@ -42,7 +47,7 @@
   --radius:       12px;
 
   /* Exact height of the fixed navigation bar */
-  --header-h:     70px;
+  --header-h:     74px;
 
   /* Speed of hover animations */
   --transition:   0.25s ease;
@@ -55,10 +60,6 @@
 
 /* =============================================
    2. RESET & BASE STYLES
-      Remove browser default margins and padding.
-      box-sizing: border-box means padding and
-      borders are included in an element's size —
-      much easier to work with.
 ============================================= */
 *,
 *::before,
@@ -69,9 +70,14 @@
 }
 
 html {
-  /* Smooth scrolling when a nav link is clicked */
+  /* Smooth scrolling when an internal link is clicked */
   scroll-behavior: smooth;
   font-size: 16px;
+}
+
+/* Offset sticky header so section headings aren't hidden */
+section[id] {
+  scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
 body {
@@ -82,14 +88,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Images never overflow their parent */
+/* Images never overflow their container */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Links inherit their parent's colour by default */
+/* Links inherit parent text colour by default */
 a {
   color: inherit;
   text-decoration: none;
@@ -97,10 +103,10 @@ a {
 }
 
 a:hover {
-  color: var(--blush-deep);
+  color: var(--gold-deep);
 }
 
-/* Remove bullet points from all lists */
+/* Remove default bullet points */
 ul {
   list-style: none;
 }
@@ -108,9 +114,6 @@ ul {
 
 /* =============================================
    3. TYPOGRAPHY
-      Headings use the elegant Georgia serif font.
-      clamp() makes font sizes fluid — they scale
-      smoothly between a minimum and maximum size.
 ============================================= */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
@@ -118,16 +121,14 @@ h1, h2, h3, h4 {
   line-height: 1.25;
 }
 
-/* clamp(min, preferred, max) */
 h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
 h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); margin-bottom: 0.5rem; }
 h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
 h4 { font-size: 1rem; }
 
-/* <em> tags render in the brand's deeper blush colour */
 em {
   font-style: italic;
-  color: var(--blush-deep);
+  color: var(--gold-deep);
 }
 
 p {
@@ -137,40 +138,35 @@ p {
 
 /* =============================================
    4. UTILITY CLASSES
-      Reusable helpers used across multiple sections.
 ============================================= */
-
-/* Centred content wrapper with a maximum width */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
 
-/* Vertical padding for every main section */
 .section {
   padding: 90px 0;
 }
 
-/* Two-column side-by-side layout (About, Contact) */
+/* Two-column side-by-side flex layout */
 .two-col {
   display: flex;
   gap: 3rem;
   align-items: flex-start;
 }
 
-/* Small ALL-CAPS label above each section heading */
+/* Eyebrow label above section headings */
 .section-label {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--blush-deep);
+  color: var(--gold-deep);
   margin-bottom: 0.5rem;
 }
 
-/* Introductory paragraph under a heading */
 .section-intro {
   max-width: 640px;
   color: var(--brown-light);
@@ -178,7 +174,6 @@ p {
   font-size: 1.05rem;
 }
 
-/* Small italic note used for photo disclaimers */
 .photo-note {
   font-size: 0.82rem;
   color: var(--brown-light);
@@ -187,9 +182,8 @@ p {
   margin-bottom: 0;
 }
 
-/* Pending contact-detail placeholder text */
 .contact-pending {
-  color: var(--blush-deep);
+  color: var(--gold-deep);
   font-size: 0.85rem;
   font-style: normal;
 }
@@ -197,19 +191,18 @@ p {
 
 /* =============================================
    5. BUTTONS
-      Two variants: filled (btn-primary) and
-      transparent with a white border (btn-outline).
 ============================================= */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.75rem;
-  border-radius: 50px;      /* pill shape */
+  border-radius: 50px;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+  transition: background var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
   letter-spacing: 0.03em;
   border: 2px solid transparent;
+  text-align: center;
 }
 
 .btn-primary {
@@ -228,32 +221,49 @@ p {
 .btn-outline {
   background: transparent;
   color: var(--white);
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.85);
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   color: var(--white);
 }
 
-/* Makes a button stretch to the full width of its container */
-.btn-full {
-  width: 100%;
-  text-align: center;
+.btn-outline-dark {
+  background: transparent;
+  color: var(--brown-dark);
+  border: 1.5px solid var(--brown-dark);
+  padding: 0.65rem 1.35rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all var(--transition);
 }
 
-/* Disabled state — used on the contact form submit button until the form is connected */
+.btn-outline-dark:hover {
+  background: var(--brown-dark);
+  color: var(--white);
+}
+
+.btn-full {
+  width: 100%;
+}
+
 .btn:disabled {
   opacity: 0.45;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-/* WhatsApp action button — styled in cream, blush pink, and dark brown branding */
+/* WhatsApp action button */
 .btn-whatsapp {
   background: var(--brown-dark);
   color: var(--cream);
-  border: 2px solid var(--blush);
+  border: 2px solid var(--gold);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -264,24 +274,23 @@ p {
   border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
-  transition: background var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+  transition: all var(--transition);
   text-decoration: none;
   letter-spacing: 0.02em;
 }
 
 .btn-whatsapp:hover {
-  background: var(--blush-deep);
-  border-color: var(--blush-deep);
+  background: var(--gold-deep);
+  border-color: var(--gold-deep);
   color: var(--white);
-  box-shadow: 0 4px 16px rgba(201, 123, 106, 0.4);
+  box-shadow: 0 4px 16px rgba(168, 129, 59, 0.4);
 }
 
 .btn-whatsapp-inline {
-  margin: 0.75rem 0 0.5rem;
+  margin: 0.4rem 0;
   width: auto;
 }
 
-/* Official WhatsApp SVG logo icon */
 .whatsapp-icon {
   width: 22px;
   height: 22px;
@@ -290,7 +299,6 @@ p {
   vertical-align: middle;
 }
 
-/* Small green indicator dot to subtly recognize WhatsApp while preserving brand colours */
 .whatsapp-dot {
   display: inline-block;
   width: 8px;
@@ -303,19 +311,18 @@ p {
 
 /* =============================================
    6. HEADER & NAVIGATION
-      position: fixed keeps it visible at the top
-      of the screen even when the user scrolls down.
-      backdrop-filter: blur adds a frosted-glass
-      effect so content scrolling behind is blurred.
+      Sticky header with official logo on the left,
+      standard horizontal navigation on desktop,
+      and an accessible hamburger toggle on mobile.
 ============================================= */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;              /* sits above all page content */
+  z-index: 100;
   height: var(--header-h);
-  background: rgba(250, 246, 241, 0.96);
+  background: rgba(250, 246, 241, 0.97);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--blush-light);
@@ -330,53 +337,76 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
-/* Logo — serif font with the ✦ icon */
+/* Official Logo in Header */
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--brown-dark);
+  gap: 0.65rem;
+  text-decoration: none;
   flex-shrink: 0;
 }
 
-.logo-icon {
-  color: var(--blush);
-  font-size: 1.1rem;
+.logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--gold);
+  flex-shrink: 0;
+  transition: transform var(--transition);
 }
 
-/* Nav link list arranged horizontally */
+.logo:hover .logo-img {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+.logo-text em {
+  color: var(--gold-deep);
+}
+
+/* Desktop Navigation */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  flex-wrap: wrap;
+  gap: 0.2rem;
 }
 
 .nav-list a {
-  padding: 0.4rem 0.8rem;
+  padding: 0.45rem 0.75rem;
   border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--brown-mid);
-  transition: background var(--transition), color var(--transition);
+  transition: all var(--transition);
   white-space: nowrap;
 }
 
 .nav-list a:hover {
-  background: var(--blush-light);
+  background: var(--gold-light);
   color: var(--brown-dark);
 }
 
-/* The "Contact Us" button in the nav */
 .nav-list .nav-cta {
   background: var(--blush);
   color: var(--white);
   font-weight: 600;
+  padding: 0.45rem 1.1rem;
+  margin-left: 0.35rem;
 }
 
 .nav-list .nav-cta:hover {
@@ -384,43 +414,76 @@ p {
   color: var(--white);
 }
 
+/* Mobile Hamburger Toggle Button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 44px;
+  height: 44px;
+  padding: 12px 10px;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 101;
+  transition: border-color var(--transition);
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus {
+  border-color: var(--gold-deep);
+  outline: none;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--brown-dark);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition), background-color var(--transition);
+}
+
+/* Hamburger active transformation (into an 'X') */
+.nav-toggle.is-active .hamburger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background-color: var(--gold-deep);
+}
+
+.nav-toggle.is-active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-active .hamburger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background-color: var(--gold-deep);
+}
+
 
 /* =============================================
    7. HERO SECTION
-      Full-screen banner. The background photograph
-      uses position: absolute to fill the entire
-      section. The .hero-overlay div sits on top
-      of it, adding a dark tint so the white text
-      is readable. The content sits on top of both.
-
-      This three-layer stack:
-        Layer 1 (bottom): <img class="hero-bg-img">
-        Layer 2 (middle): <div class="hero-overlay">
-        Layer 3 (top):    <div class="hero-content">
 ============================================= */
 .hero-section {
-  min-height: 100vh;             /* fills the full browser window height */
-  padding-top: var(--header-h);  /* prevents content hiding behind fixed header */
+  min-height: 100vh;
+  padding-top: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative;            /* needed so absolute children are positioned relative to this */
+  position: relative;
   overflow: hidden;
 }
 
-/* Background photo — stretched to cover the whole section */
 .hero-bg-img {
   position: absolute;
-  inset: 0;                      /* shorthand for top:0; right:0; bottom:0; left:0 */
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;             /* fills the frame without distorting the image */
-  object-position: center top;   /* keeps faces / hair at the top of the frame */
+  object-fit: cover;
+  object-position: center top;
   z-index: 0;
 }
 
-/* Semi-transparent dark overlay — improves text contrast over the photo */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -428,12 +491,11 @@ p {
     to bottom,
     rgba(30, 15, 8, 0.65) 0%,
     rgba(30, 15, 8, 0.50) 60%,
-    rgba(30, 15, 8, 0.70) 100%
+    rgba(30, 15, 8, 0.75) 100%
   );
   z-index: 1;
 }
 
-/* Text content — sits above both the photo and overlay */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -446,7 +508,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--blush-light);
+  color: var(--gold-light);
   margin-bottom: 1rem;
 }
 
@@ -457,12 +519,12 @@ p {
 }
 
 .hero-content h1 em {
-  color: var(--blush-light);
+  color: var(--gold-light);
 }
 
 .hero-sub {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 540px;
   margin: 0 auto 2rem;
 }
@@ -476,32 +538,31 @@ p {
 
 
 /* =============================================
-   8. ABOUT SECTION
-      Two columns: photo on the left, text on the right.
-      The photo is wrapped in a frame div that clips
-      it to a 4:5 portrait shape.
+   8. ABOUT SECTION (Including Meet the Founder)
 ============================================= */
 .about-section {
   background: var(--white);
 }
 
-/* Left column — takes up 42% of the row */
+.about-overview {
+  align-items: flex-start;
+}
+
 .about-image-wrap {
   flex: 0 0 42%;
-  position: relative;        /* needed for the floating badge */
+  position: relative;
   align-self: flex-start;
 }
 
-/* Frame that clips the photo to a portrait shape */
 .about-img-frame {
   width: 100%;
-  aspect-ratio: 4 / 5;      /* keeps a consistent portrait rectangle */
+  aspect-ratio: 4 / 5;
   border-radius: var(--radius);
-  overflow: hidden;          /* clips the image to the rounded corners */
+  overflow: hidden;
   box-shadow: var(--shadow);
+  border: 1px solid var(--blush-light);
 }
 
-/* The actual salon photograph */
 .about-img {
   width: 100%;
   height: 100%;
@@ -509,31 +570,29 @@ p {
   object-position: center;
 }
 
-/* Dark badge that floats over the bottom-right corner */
 .about-badge {
   position: absolute;
   bottom: -1.2rem;
   right: -1.2rem;
   background: var(--brown-dark);
-  color: var(--blush-light);
+  color: var(--gold);
+  border: 1px solid var(--gold);
   font-family: var(--font-serif);
   font-size: 0.9rem;
-  padding: 0.9rem 1.2rem;
+  padding: 0.75rem 1.2rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   font-weight: 600;
   letter-spacing: 0.03em;
 }
 
-/* Right column — takes remaining space */
 .about-text {
   flex: 1;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
-/* Bullet-point highlights list */
 .about-highlights {
-  margin-top: 1.25rem;
+  margin: 1.25rem 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -544,32 +603,112 @@ p {
   font-weight: 500;
 }
 
+/* Meet the Founder Subsection */
+.founder-subheading-wrap {
+  margin: 4rem 0 3rem;
+}
+
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.founder-section {
+  align-items: flex-start;
+}
+
+.founder-image-wrap {
+  flex: 0 0 42%;
+  position: relative;
+  align-self: flex-start;
+}
+
+.founder-img-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--gold-light);
+}
+
+.founder-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.founder-badge {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  background: var(--brown-dark);
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-weight: 600;
+}
+
+.founder-text {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.founder-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-deep);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-sans);
+}
+
+.founder-quote {
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.4rem;
+  border-left: 3px solid var(--gold);
+  background: var(--gold-light);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.founder-quote blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--brown-dark);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 
 /* =============================================
    9. SERVICES SECTION
-      Three cards displayed in a responsive grid.
-      Each card has a photo at the top and text below.
 ============================================= */
 .services-section {
   background: var(--cream);
 }
 
-/* Grid container — auto-fit means it creates as many
-   columns as will fit, each at least 290px wide */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 1.75rem;
 }
 
-/* Base white card with rounded corners and a subtle shadow */
 .card {
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: 1px solid var(--blush-light);
   transition: transform var(--transition), box-shadow var(--transition);
-  overflow: hidden;           /* clips the top photo to the card's rounded corners */
+  overflow: hidden;
 }
 
 .card:hover {
@@ -577,10 +716,9 @@ p {
   box-shadow: 0 10px 32px rgba(59, 34, 20, 0.12);
 }
 
-/* Fixed-height image area at the top of a service card */
 .service-img-wrap {
   width: 100%;
-  height: 200px;             /* all service images the same height */
+  height: 200px;
   overflow: hidden;
 }
 
@@ -588,27 +726,24 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top; /* avoids cropping faces out */
+  object-position: center top;
   transition: transform 0.4s ease;
 }
 
 .card:hover .service-img {
-  transform: scale(1.05);    /* gentle zoom on hover */
+  transform: scale(1.05);
 }
 
-/* Padding around the text below the service image */
 .service-body {
   padding: 1.5rem 1.75rem 1.75rem;
 }
 
-/* Emoji icon in the service body */
 .service-body .card-icon {
   font-size: 2rem;
   margin-bottom: 0.6rem;
   line-height: 1;
 }
 
-/* Feature list inside a service card */
 .service-features {
   margin: 0.75rem 0;
   display: flex;
@@ -623,15 +758,13 @@ p {
   position: relative;
 }
 
-/* The dash before each feature item */
 .service-features li::before {
   content: '—';
   position: absolute;
   left: 0;
-  color: var(--blush);
+  color: var(--gold);
 }
 
-/* Price shown at the bottom of a card */
 .card-price {
   margin-top: 1rem;
   font-size: 1.05rem;
@@ -639,32 +772,28 @@ p {
 }
 
 .card-price strong {
-  color: var(--blush-deep);
+  color: var(--gold-deep);
   font-size: 1.25rem;
 }
 
+
 /* =============================================
    10. PRODUCTS SECTION
-       A tighter grid so more product cards fit per row.
-       Each card has an image on top and text below.
 ============================================= */
 .products-section {
   background: var(--blush-light);
 }
 
-/* Four cards per row on large screens, narrower cards */
 .products-grid {
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
-/* Product card — column flex layout (image on top, text below) */
 .product-card {
   padding: 0;
   display: flex;
   flex-direction: column;
 }
 
-/* Fixed-height image wrapper at the top of a product card */
 .product-img-wrap {
   width: 100%;
   height: 180px;
@@ -672,7 +801,6 @@ p {
   flex-shrink: 0;
 }
 
-/* Product photograph */
 .product-img {
   width: 100%;
   height: 100%;
@@ -685,7 +813,6 @@ p {
   transform: scale(1.05);
 }
 
-/* Text content below the product image */
 .product-info {
   padding: 1.25rem 1.5rem 1.5rem;
   flex: 1;
@@ -711,73 +838,55 @@ p {
 
 /* =============================================
    11. GALLERY SECTION
-       A grid of eight photos. Two "featured" items
-       span two rows vertically, breaking the strict
-       grid pattern for a more editorial look.
-
-       KEY FIX: .gallery-grid defines the row height
-       using grid-auto-rows. The .gallery-img div
-       MUST have height: 100% (not a fixed px value)
-       so it fills its grid cell exactly — no overflow.
-
-       object-fit: cover fills each frame cleanly.
 ============================================= */
 .gallery-section {
   background: var(--white);
 }
 
-/* The grid container — 4 equal columns, rows of 220px */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 220px;      /* each row is exactly 220px tall */
+  grid-auto-rows: 220px;
   gap: 1rem;
   margin-top: 1.25rem;
 }
 
-/* Individual gallery card */
 .gallery-item {
-  position: relative;         /* needed for the absolute figcaption */
+  position: relative;
   border-radius: var(--radius);
-  overflow: hidden;           /* clips both the image AND the caption */
+  overflow: hidden;
   box-shadow: var(--shadow);
 }
 
-/* Featured items double the row height by spanning two grid rows */
 .gallery-featured {
-  grid-row: span 2;           /* spans two 220px rows = 440px + gap */
+  grid-row: span 2;
 }
 
-/* Inner wrapper that fills the grid cell exactly */
 .gallery-img {
   width: 100%;
-  height: 100%;               /* ← CRITICAL: must be 100%, not a fixed px value */
+  height: 100%;
   overflow: hidden;
 }
 
-/* The actual photograph — covers its frame, no stretching */
 .gallery-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top; /* avoids cropping heads out of portrait shots */
+  object-position: center top;
   display: block;
   transition: transform 0.4s ease;
 }
 
-/* Gentle zoom on the photo when hovering the card */
 .gallery-item:hover .gallery-img img {
   transform: scale(1.05);
 }
 
-/* Caption overlaid on the bottom of the photo */
 figcaption {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  /* Gradient fades from dark at the bottom to transparent at the top */
-  background: linear-gradient(to top, rgba(30, 15, 8, 0.80) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(30, 15, 8, 0.85) 0%, transparent 100%);
   color: var(--white);
   font-size: 0.8rem;
   font-weight: 600;
@@ -787,17 +896,62 @@ figcaption {
 
 
 /* =============================================
-   12. FAQ SECTION
-       Uses the native HTML <details>/<summary>
-       elements which expand/collapse without JS.
-       Custom CSS hides the browser's default arrow
-       and replaces it with a + / − indicator.
+   12. WHY CHOOSE US SECTION
+============================================= */
+.why-us-section {
+  background: var(--white);
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.why-card {
+  background: var(--cream);
+  border: 1px solid var(--gold-light);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  position: relative;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(59, 34, 20, 0.1);
+  border-color: var(--gold);
+}
+
+.why-icon {
+  font-size: 2.25rem;
+  margin-bottom: 0.85rem;
+  line-height: 1;
+  display: inline-block;
+}
+
+.why-card h3 {
+  font-size: 1.15rem;
+  color: var(--brown-dark);
+  margin-bottom: 0.6rem;
+}
+
+.why-card p {
+  font-size: 0.9rem;
+  color: var(--brown-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* =============================================
+   13. FAQ SECTION
 ============================================= */
 .faq-section {
   background: var(--cream);
 }
 
-/* Keep the FAQ content narrower for readability */
 .faq-container {
   max-width: 760px;
 }
@@ -809,7 +963,6 @@ figcaption {
   margin-top: 1rem;
 }
 
-/* Each question/answer pair */
 .faq-item {
   background: var(--white);
   border: 1px solid var(--blush-light);
@@ -818,13 +971,11 @@ figcaption {
   transition: box-shadow var(--transition);
 }
 
-/* Highlight the open item */
 .faq-item[open] {
   box-shadow: var(--shadow);
-  border-color: var(--blush);
+  border-color: var(--gold);
 }
 
-/* The clickable question row */
 .faq-question {
   cursor: pointer;
   padding: 1.1rem 1.5rem;
@@ -835,30 +986,26 @@ figcaption {
   align-items: center;
   justify-content: space-between;
   user-select: none;
-  list-style: none;           /* hides the default triangle marker */
+  list-style: none;
 }
 
-/* Remove the default arrow on WebKit browsers (Chrome, Safari) */
 .faq-question::-webkit-details-marker {
   display: none;
 }
 
-/* + indicator on the right */
 .faq-question::after {
   content: '+';
   font-size: 1.4rem;
-  color: var(--blush);
+  color: var(--gold-deep);
   line-height: 1;
   flex-shrink: 0;
   margin-left: 1rem;
 }
 
-/* Change + to − when the item is open */
 .faq-item[open] .faq-question::after {
   content: '−';
 }
 
-/* Answer text revealed when the item is open */
 .faq-answer {
   padding: 0 1.5rem 1.25rem;
   color: var(--brown-light);
@@ -873,8 +1020,7 @@ figcaption {
 
 
 /* =============================================
-   13. CONTACT SECTION
-       Info cards column on the left, form on the right.
+   14. CONTACT SECTION
 ============================================= */
 .contact-section {
   background: var(--white);
@@ -889,15 +1035,13 @@ figcaption {
   margin-top: 1.5rem;
 }
 
-/* Left column: three info cards */
 .contact-info {
-  flex: 0 0 36%;
+  flex: 0 0 38%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Individual info card */
 .info-card {
   background: var(--blush-light);
   border-radius: var(--radius);
@@ -926,7 +1070,25 @@ figcaption {
   margin: 0;
 }
 
-/* Right column: enquiry form */
+.contact-email-link {
+  color: var(--brown-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  word-break: break-all;
+  transition: color var(--transition);
+}
+
+.contact-email-link:hover {
+  color: var(--gold-deep);
+}
+
+.contact-card-sub {
+  font-size: 0.8rem;
+  color: var(--brown-light);
+  margin-top: 0.3rem;
+}
+
+/* Form Styles */
 .contact-form {
   flex: 1;
   display: flex;
@@ -934,7 +1096,6 @@ figcaption {
   gap: 1.1rem;
 }
 
-/* Each label + input pair */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -947,7 +1108,6 @@ figcaption {
   color: var(--brown-dark);
 }
 
-/* Input, select and textarea share the same visual style */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -961,15 +1121,14 @@ figcaption {
   background: var(--cream);
   transition: border-color var(--transition), box-shadow var(--transition);
   outline: none;
-  resize: vertical;           /* textarea can only be resized vertically */
+  resize: vertical;
 }
 
-/* Focus ring when a field is active */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--blush);
-  box-shadow: 0 0 0 3px rgba(232, 165, 152, 0.25);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 161, 93, 0.25);
 }
 
 .form-group input::placeholder,
@@ -978,10 +1137,9 @@ figcaption {
   opacity: 0.7;
 }
 
-/* Form status box — honest notice that the form is not yet connected */
 .form-status-box {
-  background: #FFF8E7;
-  border: 1px solid #F0D080;
+  background: var(--gold-light);
+  border: 1px solid var(--gold);
   border-radius: 8px;
   padding: 1rem 1.1rem;
   margin-top: 0.25rem;
@@ -990,31 +1148,40 @@ figcaption {
 .form-status-heading {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #7A6020;
+  color: var(--brown-dark);
   margin-bottom: 0.4rem;
 }
 
 .form-status-body {
-  font-size: 0.82rem;
-  color: #7A6020;
-  margin-bottom: 0;
+  font-size: 0.85rem;
+  color: var(--brown-mid);
+  margin-bottom: 0.5rem;
   line-height: 1.6;
 }
 
-.form-status-body a {
-  color: var(--blush-deep);
-  text-decoration: underline;
+.form-status-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.75rem 0;
 }
 
-.form-status-body a:hover {
-  color: var(--brown-dark);
+.form-status-note {
+  font-size: 0.775rem;
+  color: var(--brown-light);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.form-status-note a {
+  color: var(--gold-deep);
+  text-decoration: underline;
 }
 
 
 /* =============================================
-   14. FOOTER
-       Dark brown background with light text.
-       Centred column layout: logo, nav, legal note.
+   15. FOOTER
 ============================================= */
 .site-footer {
   background: var(--brown-dark);
@@ -1032,20 +1199,40 @@ figcaption {
   gap: 1.5rem;
 }
 
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-logo-img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  margin-bottom: 0.5rem;
+}
+
 .footer-brand .logo-text {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   color: var(--white);
 }
 
-.footer-brand .logo-icon {
-  color: var(--blush);
+.footer-brand .logo-text em {
+  color: var(--gold);
 }
 
 .footer-tagline {
   font-size: 0.85rem;
-  color: rgba(245, 221, 216, 0.6);
-  margin: 0.4rem 0 0;
+  color: rgba(245, 221, 216, 0.65);
+  margin: 0.35rem 0 0;
 }
 
 .footer-nav {
@@ -1057,42 +1244,45 @@ figcaption {
 
 .footer-nav a {
   font-size: 0.875rem;
-  color: rgba(245, 221, 216, 0.75);
+  color: rgba(245, 221, 216, 0.8);
   transition: color var(--transition);
 }
 
 .footer-nav a:hover {
-  color: var(--blush-light);
+  color: var(--gold);
 }
 
-/* Small WhatsApp contact link in footer */
-.footer-whatsapp {
-  margin: -0.25rem 0 0;
+.footer-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
-.footer-whatsapp-link {
+.footer-contact-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
   color: var(--blush-light);
-  border: 1px solid rgba(232, 165, 152, 0.35);
+  border: 1px solid rgba(201, 161, 93, 0.4);
   padding: 0.4rem 1rem;
   border-radius: 50px;
   transition: all var(--transition);
   text-decoration: none;
+  word-break: break-all;
 }
 
-.footer-whatsapp-link:hover {
+.footer-contact-pill:hover {
   color: var(--white);
-  border-color: var(--blush);
-  background: rgba(232, 165, 152, 0.15);
+  border-color: var(--gold);
+  background: rgba(201, 161, 93, 0.2);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .footer-legal {
   font-size: 0.775rem;
-  color: rgba(245, 221, 216, 0.45);
+  color: rgba(245, 221, 216, 0.5);
   max-width: 640px;
   line-height: 1.6;
   margin: 0;
@@ -1100,42 +1290,103 @@ figcaption {
 
 
 /* =============================================
-   15. RESPONSIVE — TABLET  (max-width: 900px)
-       The layout adapts when the screen is narrower
-       than 900px (most tablets in portrait mode).
+   16. RESPONSIVE — TABLET & MOBILE (max-width: 900px)
+       Activates mobile hamburger navigation and
+       stacks two-column layouts.
 ============================================= */
 @media (max-width: 900px) {
 
-  /* Stack two-column layouts into a single column */
+  :root {
+    --header-h: 68px;
+  }
+
+  /* Show Hamburger toggle button on mobile & tablet */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hide horizontal nav; display as vertical dropdown below header */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 12px 30px rgba(59, 34, 20, 0.15);
+    padding: 1.25rem 1.5rem 1.75rem;
+    max-height: calc(100vh - var(--header-h));
+    overflow-y: auto;
+    z-index: 99;
+  }
+
+  /* When toggled open via JavaScript */
+  .nav-menu.is-active {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: stretch;
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+    color: var(--brown-dark);
+  }
+
+  .nav-list a:hover {
+    background: var(--gold-light);
+    border-left-color: var(--gold);
+    color: var(--brown-dark);
+  }
+
+  .nav-list .nav-cta {
+    background: var(--blush);
+    color: var(--white);
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-left: 0;
+    border-left: none;
+  }
+
+  /* Stack two-column layouts */
   .two-col {
     flex-direction: column;
   }
 
-  /* About image takes full width on tablet */
-  .about-image-wrap {
+  .about-image-wrap,
+  .founder-image-wrap {
     flex: unset;
     width: 100%;
     max-width: 420px;
     margin: 0 auto 2rem;
   }
 
-  .about-badge {
+  .about-badge,
+  .founder-badge {
     right: 0;
     bottom: -1rem;
   }
 
-  /* Gallery: 2 columns, shorter rows */
+  /* Gallery: 2 columns */
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 200px;
   }
 
-  /* Cancel the double-row span on tablet so layout stays tidy */
   .gallery-featured {
     grid-row: span 2;
   }
 
-  /* Contact info cards sit side-by-side on tablet */
+  /* Contact info cards */
   .contact-info {
     flex: unset;
     width: 100%;
@@ -1150,44 +1401,31 @@ figcaption {
 
 
 /* =============================================
-   16. RESPONSIVE — MOBILE  (max-width: 600px)
-       Further simplifications for small phones.
+   17. RESPONSIVE — SMALL MOBILE (max-width: 600px)
 ============================================= */
 @media (max-width: 600px) {
 
-  /* Shrink the fixed header slightly on mobile */
   :root {
-    --header-h: 60px;
+    --header-h: 62px;
   }
 
-  /* Less vertical padding on mobile */
   .section {
     padding: 60px 0;
   }
 
-  /* Tighten the header layout */
   .header-inner {
-    gap: 0.5rem;
     padding: 0 1rem;
   }
 
-  .logo {
-    font-size: 1.1rem;
+  .logo-img {
+    width: 40px;
+    height: 40px;
   }
 
-  /* Wrap nav links to a second line if needed */
-  .nav-list {
-    gap: 0;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  .logo-text {
+    font-size: 1.15rem;
   }
 
-  .nav-list a {
-    padding: 0.3rem 0.45rem;
-    font-size: 0.75rem;
-  }
-
-  /* Hero buttons stack vertically */
   .hero-actions {
     flex-direction: column;
     align-items: center;
@@ -1196,45 +1434,47 @@ figcaption {
   .btn {
     width: 100%;
     max-width: 280px;
-    text-align: center;
   }
 
   .btn-whatsapp {
     max-width: 100%;
   }
 
-  .footer-whatsapp-link {
-    font-size: 0.8rem;
-    padding: 0.35rem 0.85rem;
+  .form-status-actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  /* Gallery: 2 columns on mobile, shorter rows */
+  .form-status-actions .btn {
+    max-width: 100%;
+  }
+
+  /* Gallery: 2 columns on small screens */
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 160px;
   }
 
-  /* Cancel the double-span on mobile — single height looks better */
   .gallery-featured {
     grid-row: span 1;
   }
 
-  /* Products: single column on small screens */
-  .products-grid {
+  .products-grid,
+  .cards-grid,
+  .why-us-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Service cards: single column */
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Stacked contact info cards */
   .contact-info {
     flex-direction: column;
   }
 
   .info-card {
     flex: 1 1 100%;
+  }
+
+  .footer-contact-pill {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.85rem;
   }
 }
