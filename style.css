@@ -281,6 +281,15 @@ p {
   width: auto;
 }
 
+/* Official WhatsApp SVG logo icon */
+.whatsapp-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* Small green indicator dot to subtly recognize WhatsApp while preserving brand colours */
 .whatsapp-dot {
   display: inline-block;
