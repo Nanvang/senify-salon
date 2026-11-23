@@ -1478,3 +1478,174 @@ figcaption {
     padding: 0.35rem 0.85rem;
   }
 }
+
+/* =============================================
+   17. LIGHTBOX STYLES & INTERACTION
+   Accessible full-screen modal for image previews.
+   Uses object-fit: contain to show the complete image
+   without cropping hairstyles or faces.
+============================================= */
+
+/* Image button trigger that fits seamlessly inside existing cards/gallery */
+.lightbox-trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+  text-align: inherit;
+  font: inherit;
+  color: inherit;
+  outline: none;
+}
+
+.lightbox-trigger:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -3px;
+}
+
+/* Lightbox Modal Overlay */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dark semi-transparent background backdrop */
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(20, 10, 5, 0.92);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+/* Modal Content Container */
+.lightbox-content {
+  position: relative;
+  z-index: 2;
+  max-width: 92vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Obvious Close Button */
+.lightbox-close {
+  position: absolute;
+  top: -2.75rem;
+  right: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--gold);
+  color: var(--brown-dark);
+  transform: scale(1.1);
+}
+
+.lightbox-close:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Lightbox Figure & Image */
+.lightbox-figure {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.lightbox-image {
+  max-width: 88vw;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: block;
+}
+
+/* Lightbox Caption */
+.lightbox-caption {
+  margin-top: 0.75rem;
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  max-width: 90vw;
+}
+
+.lightbox-caption:empty {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .lightbox {
+    padding: 1rem 0.5rem;
+  }
+
+  .lightbox-close {
+    top: -2.5rem;
+    right: 0.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1.75rem;
+  }
+
+  .lightbox-image {
+    max-width: 94vw;
+    max-height: 74vh;
+  }
+
+  .lightbox-caption {
+    font-size: 0.825rem;
+    padding: 0.35rem 0.75rem;
+  }
+}
+
