@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Senify Salon – Hair &amp; Beauty in Lagos, Nigeria. Braiding, weaving, wig installation, beauty products and more." />
+  <title>Senify Salon | Hair &amp; Beauty Lagos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =============================================
+       HEADER & NAVIGATION
+       Fixed top bar — stays visible as you scroll.
+       Each nav link uses an href that jumps to a
+       section with a matching id further down the page.
+  ============================================= -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo mark -->
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Senify <em>Salon</em></span>
+      </div>
+
+      <!-- Main navigation -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =============================================
+       MAIN CONTENT
+       All page sections live inside <main>.
+       Screen readers use this landmark to skip
+       straight to the main content.
+  ============================================= -->
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — HOME / HERO
+         Full-screen banner with a background photograph.
+         The dark overlay on top makes the white text easy to read.
+    ============================================================ -->
+    <section id="home" class="section hero-section">
+
+      <!-- Background photo: hero.jpg sits behind everything -->
+      <img
+        src="Images/hero.jpg"
+        alt="A beautifully styled woman with a lace-front wig, representing the quality and elegance of Senify Salon"
+        class="hero-bg-img" />
+
+      <!-- Semi-transparent dark overlay so text is readable over the photo -->
+      <div class="hero-overlay"></div>
+
+      <!-- Hero text and call-to-action buttons -->
+      <div class="hero-content">
+        <p class="hero-tagline">Lagos' Favourite Hair &amp; Beauty Studio</p>
+        <h1>Where Beauty <br><em>Meets Elegance</em></h1>
+        <p class="hero-sub">Premium hair styling, wigs, weaves, extensions &amp; beauty products — all in one place.</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary">Our Services</a>
+          <a href="#contact" class="btn btn-outline">Book a Visit</a>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 2 — ABOUT
+         Two-column layout: salon photograph on the left,
+         descriptive text on the right.
+    ============================================================ -->
+    <section id="about" class="section about-section">
+      <div class="container two-col">
+
+        <!-- Left column: salon photograph -->
+        <div class="about-image-wrap">
+          <div class="about-img-frame">
+            <img
+              src="Images/salon.jpg"
+              alt="The welcoming interior of Senify Salon, showing styling chairs, mirrors and a clean, elegant environment"
+              class="about-img" />
+          </div>
+          <!-- Small decorative badge overlapping the bottom-right corner of the photo -->
+          <div class="about-badge">Est. in Lagos</div>
+        </div>
+
+        <!-- Right column: about text -->
+        <div class="about-text">
+          <p class="section-label">Who We Are</p>
+          <h2>Crafted for the Modern Nigerian Woman</h2>
+          <p>
+            Senify Salon is a full-service hair and beauty destination built on the belief that every woman deserves to
+            feel confident and beautiful. Our team of skilled stylists and beauty professionals are passionate about
+            their craft and dedicated to delivering outstanding results.
+          </p>
+          <p>
+            From protective styles to luxury wig installations, premium skincare, and professional makeup, we bring
+            together the finest products and services under one roof — tailored to celebrate your natural beauty.
+          </p>
+          <ul class="about-highlights">
+            <li>✦ Skilled, certified stylists</li>
+            <li>✦ Quality-tested products only</li>
+            <li>✦ Hygienic, welcoming environment</li>
+            <li>✦ Personalised beauty consultations</li>
+          </ul>
+
+          <!-- Photograph disclaimer — required because images are illustrative -->
+          <p class="photo-note">
+            📷 <em>Photographs are illustrative and will be replaced with genuine Senify Salon images when available.</em>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 3 — HAIR STYLING SERVICES
+         Three service cards in a responsive grid.
+         Each card lists the service, what is included,
+         and a demonstration price (not a real price).
+    ============================================================ -->
+    <section id="services" class="section services-section">
+      <div class="container">
+        <p class="section-label">What We Do</p>
+        <h2>Hair Styling Services</h2>
+        <p class="section-intro">
+          Every head of hair is unique. Our stylists take time to understand your hair type, lifestyle and goals before
+          getting to work.
+        </p>
+
+        <!-- Yellow price disclaimer — required by the business owner -->
+        <p class="price-notice">
+          ⚠️ <strong>Demonstration prices only.</strong> All prices shown below are sample figures for illustration
+          purposes and do not represent actual Senify Salon pricing.
+        </p>
+
+        <!-- Service cards grid -->
+        <div class="cards-grid">
+
+          <!-- Braiding card -->
+          <article class="card service-card">
+            <div class="service-img-wrap">
+              <img
+                src="Images/braids.jpg"
+                alt="A client with long, neat knotless box braids styled to perfection"
+                class="service-img" />
+            </div>
+            <div class="service-body">
+              <div class="card-icon" aria-hidden="true">🪢</div>
+              <h3>Braiding</h3>
+              <p>Box braids, knotless braids, tribal braids, Senegalese twists, goddess braids and more. All sizes and
+                lengths.</p>
+              <ul class="service-features">
+                <li>Box Braids (Medium)</li>
+                <li>Knotless Braids</li>
+                <li>Tribal / Feed-in Braids</li>
+                <li>Senegalese Twists</li>
+              </ul>
+              <div class="card-price">From <strong>₦50,000</strong></div>
+              <span class="price-tag">Demo price</span>
+            </div>
+          </article>
+
+          <!-- Weaving card -->
+          <article class="card service-card">
+            <div class="service-img-wrap">
+              <img
+                src="Images/weaving.jpg"
+                alt="A stylist carefully applying a sew-in weave on a client's hair"
+                class="service-img" />
+            </div>
+            <div class="service-body">
+              <div class="card-icon" aria-hidden="true">🌀</div>
+              <h3>Weaving</h3>
+              <p>Sew-in weaves, quick weaves, and stitch weaves using top-quality virgin hair bundles on a protective
+                base.</p>
+              <ul class="service-features">
+                <li>Sew-in Weave (Full Head)</li>
+                <li>Quick Weave</li>
+                <li>Stitch Weave / Vixen</li>
+                <li>Frontal Weave Install</li>
+              </ul>
+              <div class="card-price">From <strong>₦80,000</strong></div>
+              <span class="price-tag">Demo price</span>
+            </div>
+          </article>
+
+          <!-- Wig installation card -->
+          <article class="card service-card">
+            <div class="service-img-wrap">
+              <img
+                src="Images/wig-install.jpg"
+                alt="A client having a natural-looking lace front wig expertly installed at the salon"
+                class="service-img" />
+            </div>
+            <div class="service-body">
+              <div class="card-icon" aria-hidden="true">👑</div>
+              <h3>Wig Installation</h3>
+              <p>Lace front, full lace, 360 lace, and U-part wigs installed for a seamless, undetectable look every
+                time.</p>
+              <ul class="service-features">
+                <li>Lace Front Install</li>
+                <li>Full Lace Wig Install</li>
+                <li>360 / U-Part Install</li>
+                <li>Glue-free Install</li>
+              </ul>
+              <div class="card-price">From <strong>₦70,000</strong></div>
+              <span class="price-tag">Demo price</span>
+            </div>
+          </article>
+
+        </div><!-- end cards-grid -->
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 4 — BEAUTY PRODUCTS
+         Product cards with photographs, descriptions and
+         demonstration prices. Covers seven product categories.
+    ============================================================ -->
+    <section id="products" class="section products-section">
+      <div class="container">
+        <p class="section-label">Shop With Us</p>
+        <h2>Beauty Products</h2>
+        <p class="section-intro">
+          Carefully curated collections of premium hair and beauty products sourced for quality and suitability for all
+          skin tones and hair types.
+        </p>
+
+        <p class="price-notice">
+          ⚠️ <strong>Demonstration prices only.</strong> All prices shown below are sample figures for illustration
+          purposes and do not represent actual Senify Salon pricing.
+        </p>
+
+        <!-- Products grid — uses a tighter minmax so more cards fit per row -->
+        <div class="cards-grid products-grid">
+
+          <!-- Wigs -->
+          <article class="card product-card">
+            <div class="product-img-wrap">
+              <img
+                src="Images/hairs.jpg"
+                alt="Premium human hair wigs displayed in a range of lengths and textures"
+                class="product-img" />
+            </div>
+            <div class="product-info">
+              <h3>Wigs</h3>
+              <p>Human hair lace front and full lace wigs in straight, wavy, curly and kinky textures. 10&quot; – 30&quot;
+                lengths.</p>
+              <div class="card-price">From <strong>₦120,000</strong></div>
+              <span class="price-tag">Demo price</span>
+            </div>
+          </article>
+
+          <!-- Weaves -->
+          <article class="card product-card">
+            <div class="product-img-wrap">
+              <img
+                src="Images/weaves.jpg"
+                alt="Bundles of soft, shiny virgin weave hair in natural colours"
+                class="product-img" />
+            </div>
+            <div class="product-info">
+              <h3>Weaves</h3>
+              <p>Virgin and Remy weave bundles — body wave, deep wave, straight and curly. Available per bundle or as a
+                set.</p>
+              <div class="card-price">From <strong>₦80,000</strong></div>
+              <span class="price-tag">Demo price</span>
+            </div>
+          </article>
+
+          <!-- Hair extensions -->
+          <article class="card product-card">
+            <div class="product-img-wrap">
+              <img
+                src="Images/extensions.jpg"
+                alt="A selection of clip-in and tape-in hair extensions in various shades"
+                class="product-img" />
+            </div>
+            <div class="product-info">
+              <h3>Hair Extensions</h3>
+              <p>Clip-in, tape-in and fusion bonded extensions in a variety of lengths, shades and textures.</p>
+              <div class="card-price">From <strong>₦50,000</strong></div>
+              <span class="price-tag">Demo price</span>
+            </div>
+          </article>
+
+          <!-- Beauty creams — no dedicated photo; reuse skincare image -->
+          <article class="card product-card">
+            <div class="product-img-wrap">
+              <img
+                src="Images/skincare.jpg"
+                alt="A flat-lay of premium skincare and beauty cream products including serums and moisturisers"
+                class="product-img" />
+            </div>
+            <div class="product-info">
+              <h3>Beauty Creams &amp; Skincare</h3>
+              <p>Body lotions, brightening creams, moisturisers, cleansers, toners, serums, SPF and targeted treatments
+                for all skin tones.</p>
+              <div class="card-price">From <strong>₦15,000</strong></div>
+              <span class="price-tag">Demo price</span>
+            </div>
+          </article>
+
+          <!-- Makeup -->
+          <article class="card product-card">
+            <div class="product-img-wrap">
+              <img
+                src="Images/makeup-products.jpg"
+                alt="A spread of makeup products including foundations, eyeshadow palettes, lipsticks and brushes"
+                class="product-img" />
+            </div>
+            <div class="product-info">
+              <h3>Makeup</h3>
+              <p>Foundations, concealers, eyeshadow palettes, lipsticks and setting sprays from trusted international
+                and local brands.</p>
+              <div class="card-price">From <strong>₦12,000</strong></div>
+              <span class="price-tag">Demo price</span>
+            </div>
+          </article>
+
+          <!-- Nail products -->
+          <article class="card product-card">
+            <div class="product-img-wrap">
+              <img
+                src="Images/nail-products.jpg"
+                alt="Gel nail polishes, nail art supplies, acrylics and press-on nail sets in various colours"
+                class="product-img" />
+            </div>
+            <div class="product-info">
+              <h3>Nail Products</h3>
+              <p>Gel polishes, nail art supplies, acrylics, top coats, cuticle oils and press-on sets for every style.</p>
+              <div class="card-price">From <strong>₦8,000</strong></div>
+              <span class="price-tag">Demo price</span>
+            </div>
+          </article>
+
+        </div><!-- end products-grid -->
+
+        <p class="photo-note" style="margin-top: 1.5rem;">
+          📷 <em>Product photographs are illustrative and will be replaced with genuine Senify Salon stock images when
+          available.</em>
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 5 — STYLE GALLERY
+         A masonry-style grid of eight photographs.
+         Two "featured" items span two rows so the grid
+         looks varied and interesting.
+         All photos use object-fit: cover so they fill
+         their frame without stretching.
+    ============================================================ -->
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <p class="section-label">Our Work</p>
+        <h2>Style Gallery</h2>
+        <p class="section-intro">A glimpse at the styles, transformations and products we love. Every look tells a
+          story.</p>
+
+        <p class="photo-note">
+          📷 <em>Photographs below are illustrative examples. They will be replaced with genuine Senify Salon work
+          photographs once available.</em>
+        </p>
+
+        <!-- Gallery grid — IMPORTANT: every figure must be INSIDE this div -->
+        <div class="gallery-grid">
+
+          <!-- Item 1: Braids (normal height) -->
+          <figure class="gallery-item">
+            <div class="gallery-img">
+              <img
+                src="Images/braids.jpg"
+                alt="A client with long, neat knotless box braids in natural black hair"
+                loading="lazy" />
+            </div>
+            <figcaption>Knotless Box Braids</figcaption>
+          </figure>
+
+          <!-- Item 2: Hairstyle — FEATURED (spans two rows) -->
+          <figure class="gallery-item gallery-featured">
+            <div class="gallery-img">
+              <img
+                src="Images/hairstyle.jpg"
+                alt="A client with a glamorous, beautifully finished hairstyle showing expert salon work"
+                loading="lazy" />
+            </div>
+            <figcaption>Glamour Hairstyle</figcaption>
+          </figure>
+
+          <!-- Item 3: Weaving (normal height) -->
+          <figure class="gallery-item">
+            <div class="gallery-img">
+              <img
+                src="Images/weaving.jpg"
+                alt="A stylist carefully applying a sew-in weave on a client's natural hair"
+                loading="lazy" />
+            </div>
+            <figcaption>Sew-in Weave</figcaption>
+          </figure>
+
+          <!-- Item 4: Skincare products (normal height) -->
+          <figure class="gallery-item">
+            <div class="gallery-img">
+              <img
+                src="Images/skincare.jpg"
+                alt="A clean flat-lay of skincare products including toners, serums and moisturisers"
+                loading="lazy" />
+            </div>
+            <figcaption>Skincare Collection</figcaption>
+          </figure>
+
+          <!-- Item 5: Makeup look (normal height) -->
+          <figure class="gallery-item">
+            <div class="gallery-img">
+              <img
+                src="Images/makeup.jpg"
+                alt="A client with a flawless glam makeup look including contoured cheeks and bold lashes"
+                loading="lazy" />
+            </div>
+            <figcaption>Glam Makeup Look</figcaption>
+          </figure>
+
+          <!-- Item 6: Nails — FEATURED (spans two rows) -->
+          <figure class="gallery-item gallery-featured">
+            <div class="gallery-img">
+              <img
+                src="Images/nails.jpg"
+                alt="A close-up of elegant gel nails in a neutral nude pink shade with a glossy finish"
+                loading="lazy" />
+            </div>
+            <figcaption>Gel Nail Set</figcaption>
+          </figure>
+
+          <!-- Item 7: Hair extensions (normal height) -->
+          <figure class="gallery-item">
+            <div class="gallery-img">
+              <img
+                src="Images/extensions.jpg"
+                alt="A neatly arranged display of premium hair extensions in various shades"
+                loading="lazy" />
+            </div>
+            <figcaption>Hair Extensions</figcaption>
+          </figure>
+
+          <!-- Item 8: Wig install (normal height) -->
+          <figure class="gallery-item">
+            <div class="gallery-img">
+              <img
+                src="Images/wig-install.jpg"
+                alt="A client wearing a natural-looking lace front wig with deep body wave hair"
+                loading="lazy" />
+            </div>
+            <figcaption>Wig Installation</figcaption>
+          </figure>
+
+        </div><!-- end gallery-grid — all figures must be inside here -->
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 6 — FREQUENTLY ASKED QUESTIONS
+         Uses the HTML <details> and <summary> elements.
+         These act like accordion panels without any JavaScript —
+         clicking a question expands or collapses the answer.
+         This section fulfils the "extra section" requirement.
+    ============================================================ -->
+    <section id="faq" class="section faq-section">
+      <div class="container faq-container">
+        <p class="section-label">Common Questions</p>
+        <h2>Frequently Asked Questions</h2>
+        <p class="section-intro">Here are some things our clients often ask. Have more questions? Reach out via our
+          contact section.</p>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary class="faq-question">Do I need to book an appointment in advance?</summary>
+            <div class="faq-answer">
+              <p>We recommend booking an appointment to secure your preferred date and time, especially for hair
+                services. Walk-ins are welcome for product purchases and may be accommodated for services depending on
+                availability.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What hair types do your stylists work with?</summary>
+            <div class="faq-answer">
+              <p>Our stylists work with all hair types — 1A through 4C. Whether you have fine, straight hair or thick,
+                coily natural hair, we have the expertise and products to give you the best result.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can I bring my own hair products or extensions?</summary>
+            <div class="faq-answer">
+              <p>Yes, you are welcome to bring your own hair or extensions for installation services. We also carry a
+                range of premium hair products in-store if you would prefer to purchase from us.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How long does a full wig installation take?</summary>
+            <div class="faq-answer">
+              <p>A typical wig installation takes between 1.5 to 3 hours depending on the wig type, the method used
+                (glued vs. glue-free), and any additional styling required. We'll give you an estimated duration when
+                you book.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Are the beauty products you sell genuine / authentic?</summary>
+            <div class="faq-answer">
+              <p>Yes. We only stock and sell products that have been quality-checked and sourced through reputable
+                suppliers. Your safety and satisfaction are our top priorities.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Do you offer consultations before a service?</summary>
+            <div class="faq-answer">
+              <p>Absolutely. We offer brief consultations before every service to understand your hair goals, assess
+                your hair's condition, and recommend the best approach. There is no additional charge for
+                consultations.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What payment methods are accepted?</summary>
+            <div class="faq-answer">
+              <p>We accept cash and bank transfers. Please confirm current payment options when you get in touch, as
+                these may change. We will always inform you of accepted methods when you book.</p>
+            </div>
+          </details>
+
+        </div><!-- end faq-list -->
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 7 — CONTACT
+         Two-column layout: info cards on the left,
+         enquiry form on the right.
+         The form is static (HTML only) and does not
+         send data without a backend service.
+    ============================================================ -->
+    <section id="contact" class="section contact-section">
+      <div class="container contact-container">
+        <p class="section-label">Get in Touch</p>
+        <h2>Contact Us</h2>
+        <p class="section-intro">
+          Interested in booking a service or finding out more about our products? We'd love to hear from you. Fill in
+          the form and we'll get back to you as soon as possible.
+        </p>
+
+        <div class="contact-wrap two-col">
+
+          <!-- Left: contact information cards -->
+          <div class="contact-info">
+
+            <div class="info-card">
+              <span class="info-icon" aria-hidden="true">📍</span>
+              <div>
+                <h4>Location</h4>
+                <!-- No real address: exact details to be confirmed by business owner -->
+                <p>Lagos, Nigeria<br>
+                  <em class="contact-pending">Contact details pending — to be confirmed by the business owner.</em>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <span class="info-icon" aria-hidden="true">🕐</span>
+              <div>
+                <h4>Opening Hours</h4>
+                <!-- Hours are illustrative; to be confirmed by business owner -->
+                <p>
+                  <em class="contact-pending">Opening hours to be confirmed by the business owner.</em>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <span class="info-icon" aria-hidden="true">💬</span>
+              <div>
+                <h4>Enquiries</h4>
+                <p>Use the form opposite to send us a message and we'll respond promptly.</p>
+              </div>
+            </div>
+
+          </div><!-- end contact-info -->
+
+          <!-- Right: enquiry form -->
+          <!-- action="#" means the form reloads the page on submit — harmless for a static site -->
+          <form class="contact-form" action="#" method="post" novalidate>
+
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="e.g. Amara Okafor" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="e.g. amara@email.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service / Interest</label>
+              <select id="service" name="service">
+                <option value="">— Select an option —</option>
+                <option value="braiding">Braiding</option>
+                <option value="weaving">Weaving</option>
+                <option value="wig-install">Wig Installation</option>
+                <option value="products">Products</option>
+                <option value="other">Other / General Enquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5"
+                placeholder="Tell us what you need or ask us anything…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+
+            <!-- Reminder that the form is static -->
+            <p class="form-note">
+              📌 This form is for demonstration only and does not currently submit data to any server.
+            </p>
+
+          </form>
+
+        </div><!-- end contact-wrap -->
+      </div>
+    </section>
+
+  </main><!-- end main -->
+
+
+  <!-- =============================================
+       FOOTER
+       Bottom of every page. Contains the logo,
+       quick navigation links and a legal notice.
+  ============================================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <!-- Brand name -->
+      <div class="footer-brand">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Senify <em>Salon</em></span>
+        <p class="footer-tagline">Hair &amp; Beauty · Lagos, Nigeria</p>
+      </div>
+
+      <!-- Footer navigation — mirrors the main nav -->
+      <nav aria-label="Footer navigation">
+        <ul class="footer-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Legal disclaimer -->
+      <p class="footer-legal">
+        &copy; 2025 Senify Salon. This is a demonstration website built for learning purposes. All prices, details and
+        content are for illustration only and do not constitute actual business information. Photographs are
+        illustrative and are not presented as proof of Senify Salon's work or premises.
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

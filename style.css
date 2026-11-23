@@ -1,0 +1,1152 @@
+/* =============================================
+   SENIFY SALON — style.css
+   A beginner-friendly, well-commented stylesheet.
+
+   COLOUR PALETTE
+   --cream:        #FAF6F1  — warm white page background
+   --blush:        #E8A598  — soft pink accent colour
+   --blush-light:  #F5DDD8  — very pale pink for backgrounds
+   --blush-deep:   #C97B6A  — deeper pink for hover states
+   --brown-dark:   #3B2214  — almost-black brown for headings
+   --brown-mid:    #6B3D2E  — medium brown for body text
+   --brown-light:  #9E6B5A  — lighter brown for captions / labels
+   --white:        #FFFFFF  — pure white
+
+   HOW TO READ THIS FILE
+   CSS is applied from top to bottom. If two rules
+   target the same element, the one written LATER wins
+   (unless one has higher "specificity").
+   ============================================= */
+
+
+/* =============================================
+   1. CSS CUSTOM PROPERTIES (variables)
+      Define colours, sizes and transitions once
+      here, then reuse them throughout the file.
+      Change a value here and it updates everywhere.
+============================================= */
+:root {
+  --cream:        #FAF6F1;
+  --blush:        #E8A598;
+  --blush-light:  #F5DDD8;
+  --blush-deep:   #C97B6A;
+  --brown-dark:   #3B2214;
+  --brown-mid:    #6B3D2E;
+  --brown-light:  #9E6B5A;
+  --white:        #FFFFFF;
+
+  /* Box-shadow shorthand used on cards and panels */
+  --shadow:       0 4px 20px rgba(59, 34, 20, 0.08);
+
+  /* How rounded card corners are */
+  --radius:       12px;
+
+  /* Exact height of the fixed navigation bar */
+  --header-h:     70px;
+
+  /* Speed of hover animations */
+  --transition:   0.25s ease;
+
+  /* Font stacks — serif for headings, sans-serif for body */
+  --font-serif:   'Georgia', 'Times New Roman', serif;
+  --font-sans:    'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+/* =============================================
+   2. RESET & BASE STYLES
+      Remove browser default margins and padding.
+      box-sizing: border-box means padding and
+      borders are included in an element's size —
+      much easier to work with.
+============================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Smooth scrolling when a nav link is clicked */
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--brown-mid);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Images never overflow their parent */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Links inherit their parent's colour by default */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--blush-deep);
+}
+
+/* Remove bullet points from all lists */
+ul {
+  list-style: none;
+}
+
+
+/* =============================================
+   3. TYPOGRAPHY
+      Headings use the elegant Georgia serif font.
+      clamp() makes font sizes fluid — they scale
+      smoothly between a minimum and maximum size.
+============================================= */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--brown-dark);
+  line-height: 1.25;
+}
+
+/* clamp(min, preferred, max) */
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); margin-bottom: 0.5rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+h4 { font-size: 1rem; }
+
+/* <em> tags render in the brand's deeper blush colour */
+em {
+  font-style: italic;
+  color: var(--blush-deep);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+
+/* =============================================
+   4. UTILITY CLASSES
+      Reusable helpers used across multiple sections.
+============================================= */
+
+/* Centred content wrapper with a maximum width */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Vertical padding for every main section */
+.section {
+  padding: 90px 0;
+}
+
+/* Two-column side-by-side layout (About, Contact) */
+.two-col {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* Small ALL-CAPS label above each section heading */
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blush-deep);
+  margin-bottom: 0.5rem;
+}
+
+/* Introductory paragraph under a heading */
+.section-intro {
+  max-width: 640px;
+  color: var(--brown-light);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+/* Small italic note used for photo disclaimers */
+.photo-note {
+  font-size: 0.82rem;
+  color: var(--brown-light);
+  font-style: italic;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* Pending contact-detail placeholder text */
+.contact-pending {
+  color: var(--blush-deep);
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+
+/* =============================================
+   5. BUTTONS
+      Two variants: filled (btn-primary) and
+      transparent with a white border (btn-outline).
+============================================= */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;      /* pill shape */
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+  letter-spacing: 0.03em;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--blush);
+  color: var(--white);
+  border-color: var(--blush);
+}
+
+.btn-primary:hover {
+  background: var(--blush-deep);
+  border-color: var(--blush-deep);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(201, 123, 106, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+}
+
+/* Makes a button stretch to the full width of its container */
+.btn-full {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* =============================================
+   6. HEADER & NAVIGATION
+      position: fixed keeps it visible at the top
+      of the screen even when the user scrolls down.
+      backdrop-filter: blur adds a frosted-glass
+      effect so content scrolling behind is blurred.
+============================================= */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;              /* sits above all page content */
+  height: var(--header-h);
+  background: rgba(250, 246, 241, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--blush-light);
+  box-shadow: 0 2px 10px rgba(59, 34, 20, 0.06);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo — serif font with the ✦ icon */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  color: var(--blush);
+  font-size: 1.1rem;
+}
+
+/* Nav link list arranged horizontally */
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.nav-list a {
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--brown-mid);
+  transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+
+.nav-list a:hover {
+  background: var(--blush-light);
+  color: var(--brown-dark);
+}
+
+/* The "Contact Us" button in the nav */
+.nav-list .nav-cta {
+  background: var(--blush);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.nav-list .nav-cta:hover {
+  background: var(--blush-deep);
+  color: var(--white);
+}
+
+
+/* =============================================
+   7. HERO SECTION
+      Full-screen banner. The background photograph
+      uses position: absolute to fill the entire
+      section. The .hero-overlay div sits on top
+      of it, adding a dark tint so the white text
+      is readable. The content sits on top of both.
+
+      This three-layer stack:
+        Layer 1 (bottom): <img class="hero-bg-img">
+        Layer 2 (middle): <div class="hero-overlay">
+        Layer 3 (top):    <div class="hero-content">
+============================================= */
+.hero-section {
+  min-height: 100vh;             /* fills the full browser window height */
+  padding-top: var(--header-h);  /* prevents content hiding behind fixed header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;            /* needed so absolute children are positioned relative to this */
+  overflow: hidden;
+}
+
+/* Background photo — stretched to cover the whole section */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;                      /* shorthand for top:0; right:0; bottom:0; left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* fills the frame without distorting the image */
+  object-position: center top;   /* keeps faces / hair at the top of the frame */
+  z-index: 0;
+}
+
+/* Semi-transparent dark overlay — improves text contrast over the photo */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 15, 8, 0.65) 0%,
+    rgba(30, 15, 8, 0.50) 60%,
+    rgba(30, 15, 8, 0.70) 100%
+  );
+  z-index: 1;
+}
+
+/* Text content — sits above both the photo and overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 2rem 1.5rem;
+}
+
+.hero-tagline {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blush-light);
+  margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content h1 em {
+  color: var(--blush-light);
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 540px;
+  margin: 0 auto 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* =============================================
+   8. ABOUT SECTION
+      Two columns: photo on the left, text on the right.
+      The photo is wrapped in a frame div that clips
+      it to a 4:5 portrait shape.
+============================================= */
+.about-section {
+  background: var(--white);
+}
+
+/* Left column — takes up 42% of the row */
+.about-image-wrap {
+  flex: 0 0 42%;
+  position: relative;        /* needed for the floating badge */
+  align-self: flex-start;
+}
+
+/* Frame that clips the photo to a portrait shape */
+.about-img-frame {
+  width: 100%;
+  aspect-ratio: 4 / 5;      /* keeps a consistent portrait rectangle */
+  border-radius: var(--radius);
+  overflow: hidden;          /* clips the image to the rounded corners */
+  box-shadow: var(--shadow);
+}
+
+/* The actual salon photograph */
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Dark badge that floats over the bottom-right corner */
+.about-badge {
+  position: absolute;
+  bottom: -1.2rem;
+  right: -1.2rem;
+  background: var(--brown-dark);
+  color: var(--blush-light);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Right column — takes remaining space */
+.about-text {
+  flex: 1;
+  padding-top: 1rem;
+}
+
+/* Bullet-point highlights list */
+.about-highlights {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-highlights li {
+  color: var(--brown-dark);
+  font-weight: 500;
+}
+
+
+/* =============================================
+   9. SERVICES SECTION
+      Three cards displayed in a responsive grid.
+      Each card has a photo at the top and text below.
+============================================= */
+.services-section {
+  background: var(--cream);
+}
+
+/* Yellow warning box for the price disclaimer */
+.price-notice {
+  background: #FFF8E7;
+  border: 1px solid #F0D080;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #7A6020;
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+/* Grid container — auto-fit means it creates as many
+   columns as will fit, each at least 290px wide */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Base white card with rounded corners and a subtle shadow */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--blush-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+  overflow: hidden;           /* clips the top photo to the card's rounded corners */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(59, 34, 20, 0.12);
+}
+
+/* Fixed-height image area at the top of a service card */
+.service-img-wrap {
+  width: 100%;
+  height: 200px;             /* all service images the same height */
+  overflow: hidden;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* avoids cropping faces out */
+  transition: transform 0.4s ease;
+}
+
+.card:hover .service-img {
+  transform: scale(1.05);    /* gentle zoom on hover */
+}
+
+/* Padding around the text below the service image */
+.service-body {
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+
+/* Emoji icon in the service body */
+.service-body .card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+}
+
+/* Feature list inside a service card */
+.service-features {
+  margin: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.service-features li {
+  font-size: 0.875rem;
+  color: var(--brown-light);
+  padding-left: 1rem;
+  position: relative;
+}
+
+/* The dash before each feature item */
+.service-features li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--blush);
+}
+
+/* Price shown at the bottom of a card */
+.card-price {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: var(--brown-dark);
+}
+
+.card-price strong {
+  color: var(--blush-deep);
+  font-size: 1.25rem;
+}
+
+/* Small "Demo price" pill label */
+.price-tag {
+  display: inline-block;
+  margin-top: 0.4rem;
+  background: #FFF8E7;
+  color: #7A6020;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  border: 1px solid #F0D080;
+}
+
+
+/* =============================================
+   10. PRODUCTS SECTION
+       A tighter grid so more product cards fit per row.
+       Each card has an image on top and text below.
+============================================= */
+.products-section {
+  background: var(--blush-light);
+}
+
+/* Four cards per row on large screens, narrower cards */
+.products-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+/* Product card — column flex layout (image on top, text below) */
+.product-card {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fixed-height image wrapper at the top of a product card */
+.product-img-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Product photograph */
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .product-img {
+  transform: scale(1.05);
+}
+
+/* Text content below the product image */
+.product-info {
+  padding: 1.25rem 1.5rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info h3 {
+  margin-bottom: 0.4rem;
+}
+
+.product-info p {
+  font-size: 0.875rem;
+  color: var(--brown-light);
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.product-info .card-price {
+  margin-top: 0.75rem;
+}
+
+
+/* =============================================
+   11. GALLERY SECTION
+       A grid of eight photos. Two "featured" items
+       span two rows vertically, breaking the strict
+       grid pattern for a more editorial look.
+
+       KEY FIX: .gallery-grid defines the row height
+       using grid-auto-rows. The .gallery-img div
+       MUST have height: 100% (not a fixed px value)
+       so it fills its grid cell exactly — no overflow.
+
+       object-fit: cover fills each frame cleanly.
+============================================= */
+.gallery-section {
+  background: var(--white);
+}
+
+/* The grid container — 4 equal columns, rows of 220px */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;      /* each row is exactly 220px tall */
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+/* Individual gallery card */
+.gallery-item {
+  position: relative;         /* needed for the absolute figcaption */
+  border-radius: var(--radius);
+  overflow: hidden;           /* clips both the image AND the caption */
+  box-shadow: var(--shadow);
+}
+
+/* Featured items double the row height by spanning two grid rows */
+.gallery-featured {
+  grid-row: span 2;           /* spans two 220px rows = 440px + gap */
+}
+
+/* Inner wrapper that fills the grid cell exactly */
+.gallery-img {
+  width: 100%;
+  height: 100%;               /* ← CRITICAL: must be 100%, not a fixed px value */
+  overflow: hidden;
+}
+
+/* The actual photograph — covers its frame, no stretching */
+.gallery-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* avoids cropping heads out of portrait shots */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Gentle zoom on the photo when hovering the card */
+.gallery-item:hover .gallery-img img {
+  transform: scale(1.05);
+}
+
+/* Caption overlaid on the bottom of the photo */
+figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Gradient fades from dark at the bottom to transparent at the top */
+  background: linear-gradient(to top, rgba(30, 15, 8, 0.80) 0%, transparent 100%);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 1.5rem 0.75rem 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+
+/* =============================================
+   12. FAQ SECTION
+       Uses the native HTML <details>/<summary>
+       elements which expand/collapse without JS.
+       Custom CSS hides the browser's default arrow
+       and replaces it with a + / − indicator.
+============================================= */
+.faq-section {
+  background: var(--cream);
+}
+
+/* Keep the FAQ content narrower for readability */
+.faq-container {
+  max-width: 760px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Each question/answer pair */
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--blush-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+
+/* Highlight the open item */
+.faq-item[open] {
+  box-shadow: var(--shadow);
+  border-color: var(--blush);
+}
+
+/* The clickable question row */
+.faq-question {
+  cursor: pointer;
+  padding: 1.1rem 1.5rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  list-style: none;           /* hides the default triangle marker */
+}
+
+/* Remove the default arrow on WebKit browsers (Chrome, Safari) */
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+/* + indicator on the right */
+.faq-question::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--blush);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+/* Change + to − when the item is open */
+.faq-item[open] .faq-question::after {
+  content: '−';
+}
+
+/* Answer text revealed when the item is open */
+.faq-answer {
+  padding: 0 1.5rem 1.25rem;
+  color: var(--brown-light);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--blush-light);
+}
+
+.faq-answer p {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+
+/* =============================================
+   13. CONTACT SECTION
+       Info cards column on the left, form on the right.
+============================================= */
+.contact-section {
+  background: var(--white);
+}
+
+.contact-container {
+  max-width: 1000px;
+}
+
+.contact-wrap {
+  align-items: stretch;
+  margin-top: 1.5rem;
+}
+
+/* Left column: three info cards */
+.contact-info {
+  flex: 0 0 36%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Individual info card */
+.info-card {
+  background: var(--blush-light);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.info-card h4 {
+  margin-bottom: 0.25rem;
+  color: var(--brown-dark);
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  color: var(--brown-light);
+  margin: 0;
+}
+
+/* Right column: enquiry form */
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* Each label + input pair */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+}
+
+/* Input, select and textarea share the same visual style */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--blush-light);
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--brown-dark);
+  background: var(--cream);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+  resize: vertical;           /* textarea can only be resized vertically */
+}
+
+/* Focus ring when a field is active */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blush);
+  box-shadow: 0 0 0 3px rgba(232, 165, 152, 0.25);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--brown-light);
+  opacity: 0.7;
+}
+
+/* Tiny disclaimer under the submit button */
+.form-note {
+  font-size: 0.775rem;
+  color: var(--brown-light);
+  margin-top: -0.25rem;
+  margin-bottom: 0;
+}
+
+
+/* =============================================
+   14. FOOTER
+       Dark brown background with light text.
+       Centred column layout: logo, nav, legal note.
+============================================= */
+.site-footer {
+  background: var(--brown-dark);
+  color: var(--blush-light);
+  padding: 3rem 1.5rem 2rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.footer-brand .logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.footer-brand .logo-icon {
+  color: var(--blush);
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(245, 221, 216, 0.6);
+  margin: 0.4rem 0 0;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1rem;
+}
+
+.footer-nav a {
+  font-size: 0.875rem;
+  color: rgba(245, 221, 216, 0.75);
+  transition: color var(--transition);
+}
+
+.footer-nav a:hover {
+  color: var(--blush-light);
+}
+
+.footer-legal {
+  font-size: 0.775rem;
+  color: rgba(245, 221, 216, 0.45);
+  max-width: 640px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* =============================================
+   15. RESPONSIVE — TABLET  (max-width: 900px)
+       The layout adapts when the screen is narrower
+       than 900px (most tablets in portrait mode).
+============================================= */
+@media (max-width: 900px) {
+
+  /* Stack two-column layouts into a single column */
+  .two-col {
+    flex-direction: column;
+  }
+
+  /* About image takes full width on tablet */
+  .about-image-wrap {
+    flex: unset;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 2rem;
+  }
+
+  .about-badge {
+    right: 0;
+    bottom: -1rem;
+  }
+
+  /* Gallery: 2 columns, shorter rows */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+
+  /* Cancel the double-row span on tablet so layout stays tidy */
+  .gallery-featured {
+    grid-row: span 2;
+  }
+
+  /* Contact info cards sit side-by-side on tablet */
+  .contact-info {
+    flex: unset;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .info-card {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+}
+
+
+/* =============================================
+   16. RESPONSIVE — MOBILE  (max-width: 600px)
+       Further simplifications for small phones.
+============================================= */
+@media (max-width: 600px) {
+
+  /* Shrink the fixed header slightly on mobile */
+  :root {
+    --header-h: 60px;
+  }
+
+  /* Less vertical padding on mobile */
+  .section {
+    padding: 60px 0;
+  }
+
+  /* Tighten the header layout */
+  .header-inner {
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  /* Wrap nav links to a second line if needed */
+  .nav-list {
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-list a {
+    padding: 0.3rem 0.45rem;
+    font-size: 0.75rem;
+  }
+
+  /* Hero buttons stack vertically */
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* Gallery: 2 columns on mobile, shorter rows */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 160px;
+  }
+
+  /* Cancel the double-span on mobile — single height looks better */
+  .gallery-featured {
+    grid-row: span 1;
+  }
+
+  /* Products: single column on small screens */
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Service cards: single column */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stacked contact info cards */
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .info-card {
+    flex: 1 1 100%;
+  }
+}
