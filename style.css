@@ -242,6 +242,13 @@ p {
   text-align: center;
 }
 
+/* Disabled state — used on the contact form submit button until the form is connected */
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 
 /* =============================================
    6. HEADER & NAVIGATION
@@ -496,18 +503,6 @@ p {
   background: var(--cream);
 }
 
-/* Yellow warning box for the price disclaimer */
-.price-notice {
-  background: #FFF8E7;
-  border: 1px solid #F0D080;
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
-  color: #7A6020;
-  margin-bottom: 2rem;
-  max-width: 700px;
-}
-
 /* Grid container — auto-fit means it creates as many
    columns as will fit, each at least 290px wide */
 .cards-grid {
@@ -596,22 +591,6 @@ p {
   color: var(--blush-deep);
   font-size: 1.25rem;
 }
-
-/* Small "Demo price" pill label */
-.price-tag {
-  display: inline-block;
-  margin-top: 0.4rem;
-  background: #FFF8E7;
-  color: #7A6020;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
-  border-radius: 50px;
-  border: 1px solid #F0D080;
-}
-
 
 /* =============================================
    10. PRODUCTS SECTION
@@ -948,12 +927,36 @@ figcaption {
   opacity: 0.7;
 }
 
-/* Tiny disclaimer under the submit button */
-.form-note {
-  font-size: 0.775rem;
-  color: var(--brown-light);
-  margin-top: -0.25rem;
+/* Form status box — honest notice that the form is not yet connected */
+.form-status-box {
+  background: #FFF8E7;
+  border: 1px solid #F0D080;
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  margin-top: 0.25rem;
+}
+
+.form-status-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #7A6020;
+  margin-bottom: 0.4rem;
+}
+
+.form-status-body {
+  font-size: 0.82rem;
+  color: #7A6020;
   margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.form-status-body a {
+  color: var(--blush-deep);
+  text-decoration: underline;
+}
+
+.form-status-body a:hover {
+  color: var(--brown-dark);
 }
 
 
