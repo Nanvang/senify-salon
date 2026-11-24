@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Reveal the lightbox modal
     lightbox.removeAttribute('hidden');
+    lightbox.classList.add('is-open');
 
     // Prevent background page from scrolling while viewing photo
     document.body.style.overflow = 'hidden';
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!lightbox || lightbox.hasAttribute('hidden')) return;
 
     // Hide the lightbox
+    lightbox.classList.remove('is-open');
     lightbox.setAttribute('hidden', '');
 
     // Clear image source to stop memory retention

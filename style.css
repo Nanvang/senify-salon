@@ -892,6 +892,7 @@ figcaption {
   font-weight: 600;
   padding: 1.5rem 0.75rem 0.6rem;
   letter-spacing: 0.03em;
+  pointer-events: none;
 }
 
 
@@ -1496,6 +1497,7 @@ figcaption {
   border: none;
   background: transparent;
   cursor: zoom-in;
+  overflow: hidden;
   text-align: inherit;
   font: inherit;
   color: inherit;
@@ -1515,10 +1517,7 @@ figcaption {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  padding: 2.75rem 1.5rem 1.5rem;
 }
 
 .lightbox[hidden] {
@@ -1526,8 +1525,16 @@ figcaption {
 }
 
 .lightbox.is-open {
-  opacity: 1;
-  visibility: visible;
+  animation: lightboxFadeIn 0.2s ease forwards;
+}
+
+@keyframes lightboxFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Dark semi-transparent background backdrop */
@@ -1627,7 +1634,7 @@ figcaption {
 
 @media (max-width: 600px) {
   .lightbox {
-    padding: 1rem 0.5rem;
+    padding: 3rem 0.5rem 1rem;
   }
 
   .lightbox-close {
