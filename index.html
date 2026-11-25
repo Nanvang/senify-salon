@@ -44,8 +44,6 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#why-choose-us">Why Choose Us</a></li>
-          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact" class="nav-cta">Contact Us</a></li>
         </ul>
       </nav>
@@ -82,8 +80,7 @@
         <p class="hero-sub">Premium hair styling, wigs, weaves, extensions &amp; beauty products — all in one place.</p>
         <div class="hero-actions">
           <a href="#services" class="btn btn-primary">Our Services</a>
-          <a href="https://wa.me/2349030658580?text=Hello%20Senify%20Salon%2C%20I%20would%20like%20to%20enquire%20about%20your%20beauty%20services."
-            class="btn btn-outline" target="_blank" rel="noopener noreferrer">Book a Visit</a>
+          <a href="#whatsapp-booking" class="btn btn-outline">Book an Appointment</a>
         </div>
       </div>
 
@@ -198,7 +195,7 @@
         </p>
 
         <!-- Service cards grid -->
-        <div class="cards-grid">
+        <div class="cards-grid services-grid">
 
           <!-- Braiding card -->
           <article class="card service-card">
@@ -210,17 +207,23 @@
               </button>
             </div>
             <div class="service-body">
-              <div class="card-icon" aria-hidden="true">🪢</div>
-              <h3>Braiding</h3>
-              <p>Box braids, knotless braids, tribal braids, Senegalese twists, goddess braids and more. All sizes and
-                lengths.</p>
-              <ul class="service-features">
-                <li>Box Braids (Medium)</li>
-                <li>Knotless Braids</li>
-                <li>Tribal / Feed-in Braids</li>
-                <li>Senegalese Twists</li>
-              </ul>
-              <div class="card-price">From <strong>₦50,000</strong></div>
+              <h3 class="service-title"><span class="card-icon" aria-hidden="true">🪢</span> Braiding</h3>
+              <p class="service-desc">Box braids, knotless braids, tribal braids, Senegalese twists, goddess braids and
+                more. All sizes and lengths.</p>
+              <div id="service-details-braiding" class="service-details" hidden>
+                <p class="service-details-label">Popular Styles Included:</p>
+                <ul class="service-features">
+                  <li>Box Braids (Medium)</li>
+                  <li>Knotless Braids</li>
+                  <li>Tribal / Feed-in Braids</li>
+                  <li>Senegalese Twists</li>
+                </ul>
+              </div>
+              <div class="service-card-footer">
+                <div class="card-price">From <strong>₦50,000</strong></div>
+                <button type="button" class="btn-service-toggle" aria-expanded="false"
+                  aria-controls="service-details-braiding">View Details</button>
+              </div>
             </div>
           </article>
 
@@ -234,17 +237,23 @@
               </button>
             </div>
             <div class="service-body">
-              <div class="card-icon" aria-hidden="true">🌀</div>
-              <h3>Weaving</h3>
-              <p>Sew-in weaves, quick weaves, and stitch weaves using top-quality virgin hair bundles on a protective
-                base.</p>
-              <ul class="service-features">
-                <li>Sew-in Weave (Full Head)</li>
-                <li>Quick Weave</li>
-                <li>Stitch Weave / Vixen</li>
-                <li>Frontal Weave Install</li>
-              </ul>
-              <div class="card-price">From <strong>₦80,000</strong></div>
+              <h3 class="service-title"><span class="card-icon" aria-hidden="true">🌀</span> Weaving</h3>
+              <p class="service-desc">Sew-in weaves, quick weaves, and stitch weaves using top-quality virgin hair
+                bundles on a protective base.</p>
+              <div id="service-details-weaving" class="service-details" hidden>
+                <p class="service-details-label">Popular Styles Included:</p>
+                <ul class="service-features">
+                  <li>Sew-in Weave (Full Head)</li>
+                  <li>Quick Weave</li>
+                  <li>Stitch Weave / Vixen</li>
+                  <li>Frontal Weave Install</li>
+                </ul>
+              </div>
+              <div class="service-card-footer">
+                <div class="card-price">From <strong>₦80,000</strong></div>
+                <button type="button" class="btn-service-toggle" aria-expanded="false"
+                  aria-controls="service-details-weaving">View Details</button>
+              </div>
             </div>
           </article>
 
@@ -259,17 +268,23 @@
               </button>
             </div>
             <div class="service-body">
-              <div class="card-icon" aria-hidden="true">👑</div>
-              <h3>Wig Installation</h3>
-              <p>Lace front, full lace, 360 lace, and U-part wigs installed for a seamless, undetectable look every
-                time.</p>
-              <ul class="service-features">
-                <li>Lace Front Install</li>
-                <li>Full Lace Wig Install</li>
-                <li>360 / U-Part Install</li>
-                <li>Glue-free Install</li>
-              </ul>
-              <div class="card-price">From <strong>₦70,000</strong></div>
+              <h3 class="service-title"><span class="card-icon" aria-hidden="true">👑</span> Wig Installation</h3>
+              <p class="service-desc">Lace front, full lace, 360 lace, and U-part wigs installed for a seamless,
+                undetectable look every time.</p>
+              <div id="service-details-wig" class="service-details" hidden>
+                <p class="service-details-label">Popular Options Included:</p>
+                <ul class="service-features">
+                  <li>Lace Front Install</li>
+                  <li>Full Lace Wig Install</li>
+                  <li>360 / U-Part Install</li>
+                  <li>Glue-free Install</li>
+                </ul>
+              </div>
+              <div class="service-card-footer">
+                <div class="card-price">From <strong>₦70,000</strong></div>
+                <button type="button" class="btn-service-toggle" aria-expanded="false"
+                  aria-controls="service-details-wig">View Details</button>
+              </div>
             </div>
           </article>
 
@@ -304,11 +319,22 @@
               </button>
             </div>
             <div class="product-info">
-              <h3>Wigs</h3>
-              <p>Human hair lace front and full lace wigs in straight, wavy, curly and kinky textures. 10&quot; –
-                30&quot;
-                lengths.</p>
-              <div class="card-price">From <strong>₦120,000</strong></div>
+              <h3 class="product-title">Wigs</h3>
+              <p class="product-desc">Human hair lace front and full lace wigs in straight, wavy, curly and kinky
+                textures. 10&quot; – 30&quot; lengths.</p>
+              <div id="product-details-wigs" class="product-details" hidden>
+                <p class="product-details-label">Available Options:</p>
+                <ul class="product-features">
+                  <li>Lace Front &amp; Full Lace Wigs</li>
+                  <li>Straight, Wavy, Curly &amp; Kinky Textures</li>
+                  <li>10&quot; – 30&quot; Lengths</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <div class="card-price">From <strong>₦120,000</strong></div>
+                <button type="button" class="btn-product-toggle" aria-expanded="false"
+                  aria-controls="product-details-wigs">View Details</button>
+              </div>
             </div>
           </article>
 
@@ -322,10 +348,22 @@
               </button>
             </div>
             <div class="product-info">
-              <h3>Weaves</h3>
-              <p>Virgin and Remy weave bundles — body wave, deep wave, straight and curly. Available per bundle or as a
-                set.</p>
-              <div class="card-price">From <strong>₦80,000</strong></div>
+              <h3 class="product-title">Weaves</h3>
+              <p class="product-desc">Virgin and Remy weave bundles — body wave, deep wave, straight and curly.
+                Available per bundle or as a set.</p>
+              <div id="product-details-weaves" class="product-details" hidden>
+                <p class="product-details-label">Available Options:</p>
+                <ul class="product-features">
+                  <li>Virgin &amp; Remy Weave Bundles</li>
+                  <li>Body Wave, Deep Wave, Straight &amp; Curly</li>
+                  <li>Available Per Bundle or as a Set</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <div class="card-price">From <strong>₦80,000</strong></div>
+                <button type="button" class="btn-product-toggle" aria-expanded="false"
+                  aria-controls="product-details-weaves">View Details</button>
+              </div>
             </div>
           </article>
 
@@ -339,9 +377,22 @@
               </button>
             </div>
             <div class="product-info">
-              <h3>Hair Extensions</h3>
-              <p>Clip-in, tape-in and fusion bonded extensions in a variety of lengths, shades and textures.</p>
-              <div class="card-price">From <strong>₦50,000</strong></div>
+              <h3 class="product-title">Hair Extensions</h3>
+              <p class="product-desc">Clip-in, tape-in and fusion bonded extensions in a variety of lengths, shades and
+                textures.</p>
+              <div id="product-details-extensions" class="product-details" hidden>
+                <p class="product-details-label">Available Options:</p>
+                <ul class="product-features">
+                  <li>Clip-in &amp; Tape-in Extensions</li>
+                  <li>Fusion Bonded Extensions</li>
+                  <li>Variety of Lengths, Shades &amp; Textures</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <div class="card-price">From <strong>₦50,000</strong></div>
+                <button type="button" class="btn-product-toggle" aria-expanded="false"
+                  aria-controls="product-details-extensions">View Details</button>
+              </div>
             </div>
           </article>
 
@@ -356,10 +407,22 @@
               </button>
             </div>
             <div class="product-info">
-              <h3>Beauty Creams &amp; Skincare</h3>
-              <p>Body lotions, brightening creams, moisturisers, cleansers, toners, serums, SPF and targeted treatments
-                for all skin tones.</p>
-              <div class="card-price">From <strong>₦15,000</strong></div>
+              <h3 class="product-title">Beauty Creams &amp; Skincare</h3>
+              <p class="product-desc">Body lotions, brightening creams, moisturisers, cleansers, toners, serums, SPF and
+                targeted treatments for all skin tones.</p>
+              <div id="product-details-skincare" class="product-details" hidden>
+                <p class="product-details-label">Available Options:</p>
+                <ul class="product-features">
+                  <li>Body Lotions &amp; Brightening Creams</li>
+                  <li>Moisturisers, Cleansers &amp; Toners</li>
+                  <li>Serums, SPF &amp; Targeted Treatments</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <div class="card-price">From <strong>₦15,000</strong></div>
+                <button type="button" class="btn-product-toggle" aria-expanded="false"
+                  aria-controls="product-details-skincare">View Details</button>
+              </div>
             </div>
           </article>
 
@@ -374,10 +437,22 @@
               </button>
             </div>
             <div class="product-info">
-              <h3>Makeup</h3>
-              <p>Foundations, concealers, eyeshadow palettes, lipsticks and setting sprays from trusted international
-                and local brands.</p>
-              <div class="card-price">From <strong>₦12,000</strong></div>
+              <h3 class="product-title">Makeup</h3>
+              <p class="product-desc">Foundations, concealers, eyeshadow palettes, lipsticks and setting sprays from
+                trusted international and local brands.</p>
+              <div id="product-details-makeup" class="product-details" hidden>
+                <p class="product-details-label">Available Options:</p>
+                <ul class="product-features">
+                  <li>Foundations &amp; Concealers</li>
+                  <li>Eyeshadow Palettes &amp; Lipsticks</li>
+                  <li>Setting Sprays (International &amp; Local Brands)</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <div class="card-price">From <strong>₦12,000</strong></div>
+                <button type="button" class="btn-product-toggle" aria-expanded="false"
+                  aria-controls="product-details-makeup">View Details</button>
+              </div>
             </div>
           </article>
 
@@ -392,10 +467,22 @@
               </button>
             </div>
             <div class="product-info">
-              <h3>Nail Products</h3>
-              <p>Gel polishes, nail art supplies, acrylics, top coats, cuticle oils and press-on sets for every style.
-              </p>
-              <div class="card-price">From <strong>₦8,000</strong></div>
+              <h3 class="product-title">Nail Products</h3>
+              <p class="product-desc">Gel polishes, nail art supplies, acrylics, top coats, cuticle oils and press-on
+                sets for every style.</p>
+              <div id="product-details-nails" class="product-details" hidden>
+                <p class="product-details-label">Available Options:</p>
+                <ul class="product-features">
+                  <li>Gel Polishes &amp; Acrylics</li>
+                  <li>Nail Art Supplies, Top Coats &amp; Cuticle Oils</li>
+                  <li>Press-on Nail Sets</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <div class="card-price">From <strong>₦8,000</strong></div>
+                <button type="button" class="btn-product-toggle" aria-expanded="false"
+                  aria-controls="product-details-nails">View Details</button>
+              </div>
             </div>
           </article>
 
@@ -674,148 +761,150 @@
 
     <!-- ============================================================
          SECTION 8 — CONTACT US
-         Direct WhatsApp booking, confirmed business email,
-         location info, and an honest disabled static form.
+         Prominent WhatsApp booking at top, verified contact options,
+         and a collapsible enquiry form that prepares a mailto: email.
     ============================================================ -->
     <section id="contact" class="section contact-section">
       <div class="container contact-container">
         <p class="section-label">Get in Touch</p>
         <h2>Contact Us</h2>
         <p class="section-intro">
-          Interested in booking a service or finding out more about our products? We'd love to hear from you. Chat with
-          us directly on WhatsApp or send an email.
+          Ready to book or ask about a product? Message us directly on WhatsApp for the fastest response, or use the
+          contact options below.
         </p>
 
-        <div class="contact-wrap two-col">
+        <!-- Primary Booking Card: WhatsApp -->
+        <div id="whatsapp-booking" class="whatsapp-booking-card">
+          <div class="whatsapp-booking-copy">
+            <span class="whatsapp-badge">Primary Booking Option</span>
+            <h3>WhatsApp Booking</h3>
+            <p class="whatsapp-phone"><strong>+234 903 065 8580</strong></p>
+            <p class="whatsapp-desc">Fast responses for hair styling, wig installs, consultations, and product orders.</p>
+          </div>
+          <div class="whatsapp-booking-action">
+            <a href="https://wa.me/2349030658580?text=Hello%20Senify%20Salon%2C%20I%20would%20like%20to%20enquire%20about%20your%20beauty%20services."
+              id="whatsappBookingBtn" class="btn btn-whatsapp btn-whatsapp-prominent" target="_blank"
+              rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"
+                class="whatsapp-icon">
+                <path fill="#25D366"
+                  d="M12.004 2C6.478 2 2 6.478 2 12c0 1.954.563 3.778 1.536 5.32L2.25 21.75l4.577-1.258A9.957 9.957 0 0 0 12.004 22c5.524 0 10.002-4.478 10.002-10S17.528 2 12.004 2z" />
+                <path fill="#FFFFFF"
+                  d="M17.731 16.178c-.24.673-1.392 1.286-1.92 1.344-.504.057-1.156.082-3.32-.813-2.617-1.082-4.305-3.743-4.436-3.916-.13-.173-1.054-1.403-1.054-2.677 0-1.273.666-1.899.903-2.158.236-.26.516-.324.688-.324.172 0 .344.002.495.01.16.008.375-.061.587.447.22.528.75 1.83.816 1.962.065.132.108.288.021.46-.086.173-.13.28-.258.432-.13.152-.272.339-.388.455-.13.13-.265.27-.114.53.151.26.67 1.103 1.436 1.785.986.877 1.817 1.149 2.076 1.278.258.13.41.109.56-.065.152-.173.647-.755.82-1.015.172-.26.344-.216.58-.13.237.087 1.506.71 1.764.84.258.13.43.195.495.303.064.108.064.627-.176 1.3z" />
+              </svg>
+              Book on WhatsApp
+            </a>
+          </div>
+        </div>
 
-          <!-- Left: contact information cards -->
-          <div class="contact-info">
+        <!-- Secondary Contact Information Grid -->
+        <div class="contact-cards-grid">
 
-            <!-- Card 1: WhatsApp Booking (Primary) -->
-            <div class="info-card info-card-whatsapp">
-              <span class="info-icon" aria-hidden="true">💬</span>
-              <div>
-                <h4>WhatsApp Booking</h4>
-                <p><strong>+234 903 065 8580</strong></p>
-                <p>Fast responses for hair styling, wig installs, consultations, and product orders.</p>
-                <a href="https://wa.me/2349030658580?text=Hello%20Senify%20Salon%2C%20I%20would%20like%20to%20enquire%20about%20your%20beauty%20services."
-                  class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"
-                    class="whatsapp-icon">
-                    <path fill="#25D366"
-                      d="M12.004 2C6.478 2 2 6.478 2 12c0 1.954.563 3.778 1.536 5.32L2.25 21.75l4.577-1.258A9.957 9.957 0 0 0 12.004 22c5.524 0 10.002-4.478 10.002-10S17.528 2 12.004 2z" />
-                    <path fill="#FFFFFF"
-                      d="M17.731 16.178c-.24.673-1.392 1.286-1.92 1.344-.504.057-1.156.082-3.32-.813-2.617-1.082-4.305-3.743-4.436-3.916-.13-.173-1.054-1.403-1.054-2.677 0-1.273.666-1.899.903-2.158.236-.26.516-.324.688-.324.172 0 .344.002.495.01.16.008.375-.061.587.447.22.528.75 1.83.816 1.962.065.132.108.288.021.46-.086.173-.13.28-.258.432-.13.152-.272.339-.388.455-.13.13-.265.27-.114.53.151.26.67 1.103 1.436 1.785.986.877 1.817 1.149 2.076 1.278.258.13.41.109.56-.065.152-.173.647-.755.82-1.015.172-.26.344-.216.58-.13.237.087 1.506.71 1.764.84.258.13.43.195.495.303.064.108.064.627-.176 1.3z" />
-                  </svg>
-                  Chat on WhatsApp
-                </a>
+          <!-- Email Enquiries -->
+          <div class="info-card">
+            <span class="info-icon" aria-hidden="true">✉️</span>
+            <div>
+              <h4>Email Enquiries</h4>
+              <p>
+                <a href="mailto:senansamuel14@gmail.com" class="contact-email-link">senansamuel14@gmail.com</a>
+              </p>
+              <p class="contact-card-sub">For appointments, product enquiries &amp; customer support.</p>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="info-card">
+            <span class="info-icon" aria-hidden="true">📍</span>
+            <div>
+              <h4>Location</h4>
+              <p>Lagos, Nigeria<br>
+                <em class="contact-pending">Exact address provided upon confirmed booking.</em>
+              </p>
+            </div>
+          </div>
+
+          <!-- Opening Hours -->
+          <div class="info-card">
+            <span class="info-icon" aria-hidden="true">🕐</span>
+            <div>
+              <h4>Opening Hours</h4>
+              <p>
+                <em class="contact-pending">Opening hours to be confirmed by the business owner.</em>
+              </p>
+            </div>
+          </div>
+
+        </div><!-- end contact-cards-grid -->
+
+        <!-- Collapsible Enquiry Form Toggle -->
+        <div class="enquiry-toggle-wrap">
+          <button type="button" id="enquiryToggleBtn" class="btn btn-outline-dark" aria-expanded="false"
+            aria-controls="enquiryFormWrap">
+            Send an Enquiry
+          </button>
+          <p class="enquiry-toggle-hint">Prefer to draft an email message? Open the form to prepare one in your email
+            app.</p>
+        </div>
+
+        <!-- Collapsible Enquiry Form (hidden initially) -->
+        <div id="enquiryFormWrap" class="enquiry-form-wrap" hidden>
+          <div class="enquiry-form-header">
+            <h3>Prepare an Email Enquiry</h3>
+            <button type="button" id="enquiryCloseBtn" class="enquiry-close-btn"
+              aria-label="Close enquiry form">&times; Close</button>
+          </div>
+          <p class="enquiry-form-note">
+            This website does not send messages automatically. Submitting this form will open your email application
+            with your message pre-filled to <strong>senansamuel14@gmail.com</strong> — please click <strong>Send</strong>
+            in your email app to deliver it.
+          </p>
+
+          <form id="contactEnquiryForm" class="contact-form" novalidate>
+
+            <div class="form-row-two">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Amara Okafor" required />
               </div>
-            </div>
 
-            <!-- Card 2: Official Email -->
-            <div class="info-card">
-              <span class="info-icon" aria-hidden="true">✉️</span>
-              <div>
-                <h4>Email Enquiries</h4>
-                <p>
-                  <a href="mailto:senansamuel14@gmail.com" class="contact-email-link">senansamuel14@gmail.com</a>
-                </p>
-                <p class="contact-card-sub">For appointments, product enquiries &amp; customer support.</p>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="e.g. amara@email.com" required />
               </div>
-            </div>
-
-            <!-- Card 3: Location -->
-            <div class="info-card">
-              <span class="info-icon" aria-hidden="true">📍</span>
-              <div>
-                <h4>Location</h4>
-                <p>Lagos, Nigeria<br>
-                  <em class="contact-pending">Exact address provided upon confirmed booking.</em>
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 4: Opening Hours -->
-            <div class="info-card">
-              <span class="info-icon" aria-hidden="true">🕐</span>
-              <div>
-                <h4>Opening Hours</h4>
-                <p>
-                  <em class="contact-pending">Opening hours to be confirmed by the business owner.</em>
-                </p>
-              </div>
-            </div>
-
-          </div><!-- end contact-info -->
-
-          <!-- Right: enquiry form -->
-          <form class="contact-form" action="#" method="post" novalidate>
-
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="e.g. Amara Okafor" required />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="e.g. amara@email.com" required />
             </div>
 
             <div class="form-group">
               <label for="service">Service / Interest</label>
               <select id="service" name="service">
                 <option value="">— Select an option —</option>
-                <option value="braiding">Braiding</option>
-                <option value="weaving">Weaving</option>
-                <option value="wig-install">Wig Installation</option>
-                <option value="products">Products</option>
-                <option value="other">Other / General Enquiry</option>
+                <option value="Braiding">Braiding</option>
+                <option value="Weaving">Weaving</option>
+                <option value="Wig Installation">Wig Installation</option>
+                <option value="Beauty Products">Products</option>
+                <option value="General Enquiry">Other / General Enquiry</option>
               </select>
             </div>
 
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell us what you need or ask us anything…"
+              <textarea id="message" name="message" rows="4" placeholder="Tell us what you need or ask us anything…"
                 required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-full" disabled>Send Message</button>
+            <button type="submit" class="btn btn-primary btn-full">Prepare Email Enquiry</button>
 
-            <!-- Honest explanation: this form cannot send emails without a backend service -->
-            <div class="form-status-box">
-              <p class="form-status-heading">⚠️ Form not yet connected</p>
-              <p class="form-status-body">
-                This web form does not currently send messages. For immediate booking or product enquiries, please chat
-                with us directly on WhatsApp or send an email:
-              </p>
-              <div class="form-status-actions">
-                <a href="https://wa.me/2349030658580?text=Hello%20Senify%20Salon%2C%20I%20would%20like%20to%20enquire%20about%20your%20beauty%20services."
-                  class="btn btn-whatsapp btn-whatsapp-inline" target="_blank" rel="noopener noreferrer">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"
-                    class="whatsapp-icon">
-                    <path fill="#25D366"
-                      d="M12.004 2C6.478 2 2 6.478 2 12c0 1.954.563 3.778 1.536 5.32L2.25 21.75l4.577-1.258A9.957 9.957 0 0 0 12.004 22c5.524 0 10.002-4.478 10.002-10S17.528 2 12.004 2z" />
-                    <path fill="#FFFFFF"
-                      d="M17.731 16.178c-.24.673-1.392 1.286-1.92 1.344-.504.057-1.156.082-3.32-.813-2.617-1.082-4.305-3.743-4.436-3.916-.13-.173-1.054-1.403-1.054-2.677 0-1.273.666-1.899.903-2.158.236-.26.516-.324.688-.324.172 0 .344.002.495.01.16.008.375-.061.587.447.22.528.75 1.83.816 1.962.065.132.108.288.021.46-.086.173-.13.28-.258.432-.13.152-.272.339-.388.455-.13.13-.265.27-.114.53.151.26.67 1.103 1.436 1.785.986.877 1.817 1.149 2.076 1.278.258.13.41.109.56-.065.152-.173.647-.755.82-1.015.172-.26.344-.216.58-.13.237.087 1.506.71 1.764.84.258.13.43.195.495.303.064.108.064.627-.176 1.3z" />
-                  </svg>
-                  Chat on WhatsApp
-                </a>
-                <a href="mailto:senansamuel14@gmail.com" class="btn btn-outline-dark">
-                  ✉️ Email Us
-                </a>
-              </div>
-              <p class="form-status-note">
-                To connect this form for automated web submissions later, services such as
-                <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a> or
-                <a href="https://www.netlify.com/products/forms/" target="_blank" rel="noopener noreferrer">Netlify
-                  Forms</a>
-                can be integrated.
+            <div id="enquiryStatusBox" class="form-status-box" aria-live="polite" hidden>
+              <p id="enquiryStatusHeading" class="form-status-heading"></p>
+              <p id="enquiryStatusBody" class="form-status-body"></p>
+              <p id="enquiryStatusLinkWrap" class="form-status-note" hidden>
+                <a id="enquiryMailtoFallback" href="mailto:senansamuel14@gmail.com" class="contact-email-link">Open
+                  prepared email in your email application</a>
               </p>
             </div>
 
           </form>
+        </div>
 
-        </div><!-- end contact-wrap -->
       </div>
     </section>
 
@@ -878,16 +967,30 @@
        IMAGE LIGHTBOX MODAL
        Full-screen modal for displaying full-sized,
        un-cropped original photographs when clicked.
+       Supports gallery Previous/Next navigation and counter.
   ============================================= -->
   <div id="imageLightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden>
     <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
     <div class="lightbox-content">
-      <button type="button" class="lightbox-close" id="lightboxClose"
-        aria-label="Close full size image view">&times;</button>
-      <figure class="lightbox-figure">
-        <img id="lightboxImg" src="" alt="" class="lightbox-image" />
-        <figcaption id="lightboxCaption" class="lightbox-caption"></figcaption>
-      </figure>
+      <div class="lightbox-topbar">
+        <span id="lightboxCounter" class="lightbox-counter" aria-live="polite" hidden></span>
+        <button type="button" class="lightbox-close" id="lightboxClose"
+          aria-label="Close full size image view">&times;</button>
+      </div>
+      <div class="lightbox-stage">
+        <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev"
+          aria-label="Previous gallery image" hidden>
+          <span aria-hidden="true">&#8249;</span>
+        </button>
+        <figure class="lightbox-figure">
+          <img id="lightboxImg" src="" alt="" class="lightbox-image" />
+          <figcaption id="lightboxCaption" class="lightbox-caption"></figcaption>
+        </figure>
+        <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext"
+          aria-label="Next gallery image" hidden>
+          <span aria-hidden="true">&#8250;</span>
+        </button>
+      </div>
     </div>
   </div>
 
